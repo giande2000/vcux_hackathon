@@ -19,12 +19,12 @@
             <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
           </li>
           {% endfor %}
+          <li class="masthead__menu-item">
+            {% include theme-toggle.html %}
+          </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
-      <div class="masthead__utils">
-        {% include theme-toggle.html %}
-      </div>
     </div>
   </div>
 </div>

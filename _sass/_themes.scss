@@ -125,65 +125,57 @@ $xing-color : #006567;
 
 
 /* ==========================================================================
-   FROSTED GLASS THEME
+   RETRO TERMINAL THEME
    ========================================================================== */
 
-/* Frosted Glass colors */
-$frosted-bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-/* Placeholder */
-/* A subtle yellow-orange-blue gradient as per PRD */
-$frosted-gradient: linear-gradient(135deg, #fce38a 0%, #f38181 50%, #95e1d3 100%);
-/* Or maybe something softer */
+html[data-theme="retro-terminal"] {
+   /* Solarized-ish / Old Terminal Vibes */
+   --global-base-color: #859900;
+   /* Retro Green */
 
-html[data-theme="frosted-glass"] {
-   /* Using variables that map to layout/_base.scss usage */
-   --global-base-color: #2f7f93;
+   /* Retro Beige Background - Flat color, no gradient */
+   --global-bg-color: #fdf6e3;
 
-   /* The main background gradient */
-   --global-bg-color: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-   /* Let's try to match the PRD suggestion: yellow -> orange -> blue, but very subtle */
-   --global-bg-color: linear-gradient(135deg, rgba(255, 250, 204, 0.4) 0%, rgba(255, 218, 185, 0.4) 50%, rgba(173, 216, 230, 0.4) 100%), #f9f9f9;
+   --global-footer-bg-color: #eee8d5;
+   --global-border-color: #93a1a1;
+   --global-dark-border-color: #586e75;
+   --global-code-background-color: #eee8d5;
+   --global-code-text-color: #657b83;
+   --global-fig-caption-color: #93a1a1;
 
-   --global-footer-bg-color: rgba(255, 255, 255, 0.3);
-   --global-border-color: rgba(0, 0, 0, 0.1);
-   --global-dark-border-color: rgba(0, 0, 0, 0.2);
-   --global-code-background-color: rgba(255, 255, 255, 0.5);
-   --global-code-text-color: #333;
-   --global-fig-caption-color: #555;
+   --global-link-color: #268bd2;
+   --global-link-color-hover: #cb4b16;
+   --global-link-color-visited: #b58900;
 
-   --global-link-color: #0056b3;
-   --global-link-color-hover: #003d82;
-   --global-link-color-visited: #551a8b;
+   --global-masthead-link-color: #586e75;
+   --global-masthead-link-color-hover: #b58900;
 
-   --global-masthead-link-color: #222;
-   --global-masthead-link-color-hover: #000;
+   --global-text-color: #073642;
+   --global-text-color-light: #657b83;
+   --global-thead-color: #eee8d5;
 
-   --global-text-color: #222;
-   --global-text-color-light: #555;
-   --global-thead-color: rgba(0, 0, 0, 0.05);
+   /* Font Overrides for Retro Feel */
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   .masthead__menu-item,
+   .btn {
+      font-family: "Courier New", Courier, monospace;
+      letter-spacing: -0.5px;
+   }
 
-   /* Glassmorphism helpers - targeted directly for common containers */
-   /* We can't add classes to existing HTML easily without rewriting templates. 
-       But we can target global classes used in the theme. */
+   body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   }
 
+   /* Sharper borders for retro feel */
+   .btn,
    .archive__item-teaser,
    .sidebar,
-   .page__content,
-   .masthead {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-   }
-
-   /* Specific adjustments */
-   .masthead {
-      background: rgba(255, 255, 255, 0.7);
-      /* slightly more opaque for nav */
-   }
-
-   /* Override for buttons if needed */
-   .btn {
-      backdrop-filter: blur(5px);
+   .page__content {
+      border-radius: 0;
    }
 }

@@ -1,100 +1,90 @@
 <div class="theme-toggle">
-    <button id="theme-toggle-btn" class="btn btn--clear" aria-label="Toggle Theme">
-        <i class="fas fa-adjust" aria-hidden="true"></i>
+    <a href="#" id="theme-toggle-btn" class="nav-link" aria-label="Toggle Theme">
+        <i class="fas fa-sun" aria-hidden="true"></i>
         <span class="sr-only">Toggle Theme</span>
-    </button>
-    <ul id="theme-menu" class="theme-menu hidden" aria-hidden="true">
-        <li><button data-theme-value="light">Light</button></li>
-        <li><button data-theme-value="dark">Dark</button></li>
-        <li><button data-theme-value="frosted-glass">Frosted</button></li>
-    </ul>
+    </a>
 </div>
 
 <style>
     .theme-toggle {
-        position: relative;
         display: inline-block;
         margin-left: 10px;
     }
 
-    .theme-toggle .btn {
-        padding: 5px 10px;
-        font-size: 1.2em;
-        color: var(--global-masthead-link-color);
-    }
-
-    .theme-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: var(--global-bg-color);
-        border: 1px solid var(--global-border-color);
-        border-radius: 4px;
-        padding: 5px 0;
-        list-style: none;
-        z-index: 9999;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        min-width: 100px;
-    }
-
-    .theme-menu.hidden {
-        display: none;
-    }
-
-    .theme-menu button {
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding: 5px 15px;
-        background: none;
-        border: none;
+    #theme-toggle-btn {
         cursor: pointer;
-        color: var(--global-text-color);
+        display: inline-block;
+        color: inherit;
+        /* Ensure icon size matches text */
+        font-size: 1.1em;
     }
 
-    .theme-menu button:hover {
-        background: var(--global-thead-color);
+    #theme-toggle-btn:hover {
+        opacity: 0.8;
     }
 </style>
 
 <script>
     (function () {
         const btn = document.getElementById('theme-toggle-btn');
-        const menu = document.getElementById('theme-menu');
-        const themeButtons = menu.querySelectorAll('button[data-theme-value]');
+        const icon = btn.querySelector('i');
 
-        // Toggle menu
+        // Define themes and their corresponding icons
+        // Order: Light -> Dark -> Retro -> Light
+        const themes = [
+            { name: 'light', icon: 'fa-sun' },
+            { name: 'dark', icon: 'fa-moon' },
+            { name: 'retro-terminal', icon: 'fa-terminal' }
+        ];
+
+        if (!btn) return;
+
+        // Initialize state
+        const currentThemeName = localStorage.getItem('theme') ||
+            (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+        updateIcon(currentThemeName);
+
         btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const isHidden = menu.classList.contains('hidden');
-            menu.classList.toggle('hidden');
-            menu.setAttribute('aria-hidden', !isHidden);
-        });
+            e.preventDefault();
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function () {
-            if (!menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-                menu.setAttribute('aria-hidden', 'true');
-            }
-        });
+            // Get current status
+            const currentAttr = document.documentElement.getAttribute('data-theme');
+            // If attribute is missing, it's default (light usually, or system pref). 
+            // We need to resolve what "current" really is to find next.
+            let activeThemeName = currentAttr || 'light';
 
-        // Theme selection
-        themeButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                const theme = this.getAttribute('data-theme-value');
-                setTheme(theme);
-            });
+            // Find index
+            let currentIndex = themes.findIndex(t => t.name === activeThemeName);
+            if (currentIndex === -1) currentIndex = 0; // Fallback to light
+
+            // Calculate next index
+            const nextIndex = (currentIndex + 1) % themes.length;
+            const nextTheme = themes[nextIndex];
+
+            setTheme(nextTheme.name);
+            updateIcon(nextTheme.name);
         });
 
         function setTheme(theme) {
-            if (theme === 'default') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.removeItem('theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
             } else {
                 document.documentElement.setAttribute('data-theme', theme);
                 localStorage.setItem('theme', theme);
             }
+        }
+
+        function updateIcon(themeName) {
+            // Find theme object or default to light
+            const themeObj = themes.find(t => t.name === themeName) || themes[0];
+
+            // Remove all known icons
+            themes.forEach(t => icon.classList.remove(t.icon));
+
+            // Add new icon
+            icon.classList.add(themeObj.icon);
         }
     })();
 </script>
