@@ -229,7 +229,7 @@ html[data-theme="dark"] .port-card {
 
 <div class="download-section">
     <!-- Dummy link as requested -->
-    <a href="#" class="download-btn" onclick="alert('PDF Report is a placeholder for now.'); return false;">Download PDF Report</a>
+    <a href="/project/Gianluca_Decaro___Bachelor_Thesis/thesis.pdf" class="download-btn" target="_blank">Download PDF Report</a>
 </div>
 
 <div class="card-nav">
@@ -254,15 +254,21 @@ html[data-theme="dark"] .port-card {
     <!-- Card 2: Problem Statement -->
     <div class="port-card" data-title="Problem Statement">
         <h2>Problem Statement</h2>
-        <p><em>(Placeholder for Problem Statement)</em></p>
-        <p>With the rise of automated vehicles, the driver's role is shifting. Traditional interfaces may not suffice for non-driving related tasks. This thesis explores how textile interfaces can bridge the gap, providing intuitive and engaging interactions without being obtrusive.</p>
+        <p>As automated driving transforms vehicle interiors into multifunctional living spaces, the need for new human-machine interfaces that support a wide range of non-driving related activities, while remaining unobtrusive and hedonically rich, becomes critical. Current touchscreen-dominant paradigms suffer from poor ergonomics, high visual demand, and lack the aesthetic qualities suited for a comfortable environment.</p>
+        <p>Interactive textiles, combined with windshield displays, offer a promising alternative by enabling seamless, tactile, and low-attention interactions. However, their novelty presents a significant learnability challenge for first-time users. This thesis addresses this gap by investigating how different levels of feedforward can support intuitive interactions with a non-wearable textile interface designed for non-driving-related activities in automated vehicles.</p>
     </div>
 
     <!-- Card 3: Method -->
     <div class="port-card" data-title="Method">
         <h2>Methodology</h2>
-        <p><em>(Placeholder for Methodology)</em></p>
-        <p>We developed a prototype textile interface and conducted user studies to evaluate the effectiveness of different feedforward cues (visual, haptic) in an automated driving simulator context.</p>
+        <p>Following a human-centered design process, a high-fidelity prototype featuring a shape-shifting textile surface on the central armrest and a corresponding windshield display interface were developed and iteratively refined through a qualitative pre-study (N=5).</p>
+        <p>A subsequent summative user study with N=30 participants employed a between-subjects design to evaluate three feedforward conditions using a Wizard of Oz methodology:
+        <ul>
+            <li><strong>Inherent Cues</strong> from the interface's physical form.</li>
+            <li><strong>Augmented Light Cues</strong> abstractly projected directly onto the textile surface.</li>
+            <li><strong>Augmented Text Cues</strong> explicitly displayed on the windshield display.</li>
+        </ul>
+        </p>
         <div style="display:flex; justify-content:center; margin-top:20px;">
              <!-- Using a relevant image from the folder as visual aid -->
              <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/Study%20setup.png" class="zoomable" style="max-height:200px; border-radius:8px;" alt="Study Setup" onclick="openLightbox(this)">
@@ -272,8 +278,8 @@ html[data-theme="dark"] .port-card {
     <!-- Card 4: Outcomes -->
     <div class="port-card" data-title="Outcomes">
         <h2>Outcomes</h2>
-        <p><em>(Placeholder for Outcomes)</em></p>
-        <p>The results suggest that textile interfaces significantly enhance user engagement and can effectively communicate vehicle states through subtle cues, improving trust and acceptance of automated systems.</p>
+        <p>The results revealed that while the core interface possesses strong inherent hedonic qualities, augmented feedforward is critical for achieving a usable and intuitive experience. In objective performance, the seamlessly integrated light cues led to significantly higher task success rates and fewer errors compared to both text and inherent cues.</p>
+        <p>In subjective ratings of usability, intuitiveness, user experience, and emotional response, both augmented conditions performed closely and were often rated significantly better than inherent cues alone. Detailed findings imply that for novel textile systems, designers must provide robust guidance, balancing affordance-clarifying and function-revealing cues. Integrated, non-verbal light cues represent an optimal "sweet spot", proving most effective in objective performance while demonstrating a consistent subjective advantage.</p>
     </div>
 
     <!-- Card 5: Gallery -->
