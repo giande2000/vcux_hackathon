@@ -9,56 +9,69 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Interactive CV Podcast
+Listen to a summary of my journey from Systems Integrator to Creative Technologist.
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+<audio controls style="width: 100%; margin-bottom: 30px;">
+  <source src="{{ base_path }}/assets/audio/From_Systems_Integrator_to_BMW_Creative_Technologist.m4a" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+> Driven by the vision of designing intuitive and future-oriented user experiences, I combine technical understanding with creative design competence. My mission is to create real added value through user-centric solutions and to sustainably improve digital interaction.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+---
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Timeline
+
+{% include timeline.html %}
+
+---
+
+## Personal Data
+*   **Date/Place of Birth:** 02.04.2000 | Hameln
+*   **Nationalities:** German, Italian
+*   **Marital Status:** Single
+*   **Contact:** [gianluca.decaro@gmx.de](mailto:gianluca.decaro@gmx.de) | +49 1514 1367630
+
+---
+
+## Skills & Languages
+
+**Design & Prototyping Tools**
+Figma, ProtoPie, Adobe Creative Cloud, Unity, JAVA, C++, Arduino, HTML/CSS
+
+**UX-Design Skills**
+User Research, Usability Testing, Prototyping, Agile Software Development, Design Systems, User Journey Mapping, Interaction Design, Wireframing, Analytics & Data Interpretation
+
+**Languages**
+*   **German:** Native Language
+*   **English:** Fluent (spoken and written)
+*   **Italian:** Fluent (spoken)
+*   **Spanish:** Basic Knowledge
+
+---
+
+## Publications
+
+**Too Close for Comfort? The Impact of eVTOL-Overflights in Residential Areas on Non-Users' Acceptance**
+*Decaro, Gianluca; Bogarin Heurich, Sofia; Appel, Patricia B.; Kul, Sergen; Riener, Andreas*
+Proceedings of the Mensch Und Computer 2025 (MuC '25), pp. 744–748. Association for Computing Machinery.
+[DOI: 10.1145/3743049.3748548](https://doi-org.thi.idm.oclc.org/10.1145/3743049.3748548)
+
+---
+
+## Awards
+
+**Deutschlandstipendium**
+*OKT 2022 – SEP 2023*
+Funding for gifted and high-achieving students.
+
+---
+
+## Volunteering
+
+**NICE - Network and International Culture Exchange**
+*Student Association*
+*   **Member of the Marketing Team** (APR 2022 – FEB 2023)
+*   **Co-Head of the Marketing Team** (MÄR 2023 – FEB 2024)
+
