@@ -1,24 +1,28 @@
 <style>
+    /* TIMELINE STYLES - RETRO/DARK THEME ALIGNMENT */
+
     /* Scoped Timeline Styles */
     .timeline-container {
         position: relative;
         max-width: 1200px;
         margin: 40px auto;
+        font-family: "Courier New", Courier, monospace;
+        /* Retro font */
     }
 
     /* The actual vertical line */
     .timeline-container::after {
         content: '';
         position: absolute;
-        width: 6px;
-        background-color: var(--primary-color, #333);
-        /* Fallback to dark gray */
+        width: 4px;
+        /* Slightly thinner for retro look */
+        background-color: var(--global-text-color, #333);
         top: 0;
         bottom: 0;
         left: 50%;
-        margin-left: -3px;
-        border-radius: 3px;
-        opacity: 0.3;
+        margin-left: -2px;
+        z-index: 0;
+        opacity: 0.5;
     }
 
     .timeline-card {
@@ -27,20 +31,78 @@
         background-color: inherit;
         width: 50%;
         box-sizing: border-box;
+
+        /* Animation Base State */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Animation Visible State */
+    .timeline-card.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Hover Effect - Expansion */
+    .timeline-card:hover {
+        transform: scale(1.03) translateY(0);
+        /* maintain fade-in Y position but scale up */
+        z-index: 10;
+    }
+
+    /* Content Box Styling */
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: var(--global-code-background-color, #eee8d5);
+        /* Tries to use theme's code block bg */
+        color: var(--global-text-color, #073642);
+        position: relative;
+        border-radius: 0;
+        /* Sharp retro corners */
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        /* Retro hard shadow */
+        border: 2px solid var(--global-border-color, #93a1a1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .timeline-card:hover .timeline-content {
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+        /* Deeper shadow on hover */
+        border-color: var(--global-link-color, #859900);
+        /* Highlight border on hover */
+    }
+
+    /* Dark mode adjustments explicitly if variables fail */
+    [data-theme="dark"] .timeline-content {
+        background-color: #2a2a2a;
+        border-color: #555;
+        box-shadow: 4px 4px 0px black;
+    }
+
+    [data-theme="dark"] .timeline-card:hover .timeline-content {
+        border-color: var(--primary-color, #268bd2);
     }
 
     /* Circles on the timeline */
     .timeline-card::after {
         content: '';
         position: absolute;
-        width: 20px;
-        height: 20px;
-        right: -10px;
-        background-color: var(--background-color, #fff);
-        border: 4px solid var(--primary-color, #0056b3);
-        top: 15px;
-        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        right: -8px;
+        background-color: var(--global-bg-color, #fdf6e3);
+        border: 4px solid var(--global-text-color, #073642);
+        top: 20px;
+        border-radius: 0;
+        /* Square/Diamond markers for retro feel */
         z-index: 1;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .timeline-card:hover::after {
+        background-color: var(--global-link-color, #859900);
+        transform: scale(1.2);
     }
 
     .left {
@@ -51,76 +113,64 @@
         left: 50%;
     }
 
+    /* Arrows */
     .left::before {
         content: " ";
         height: 0;
         position: absolute;
-        top: 18px;
+        top: 22px;
         width: 0;
         z-index: 1;
         right: 30px;
-        border: medium solid var(--caption-color, gray);
-        /* arrow color */
+        border: medium solid var(--global-border-color, #93a1a1);
         border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent var(--background-color, #f9f9f9);
+        border-color: transparent transparent transparent var(--global-border-color, #93a1a1);
     }
 
     .right::before {
         content: " ";
         height: 0;
         position: absolute;
-        top: 18px;
+        top: 22px;
         width: 0;
         z-index: 1;
         left: 30px;
-        border: medium solid var(--caption-color, gray);
+        border: medium solid var(--global-border-color, #93a1a1);
         border-width: 10px 10px 10px 0;
-        border-color: transparent var(--background-color, #f9f9f9) transparent transparent;
+        border-color: transparent var(--global-border-color, #93a1a1) transparent transparent;
     }
 
     .right::after {
-        left: -10px;
-    }
-
-    .timeline-content {
-        padding: 20px 30px;
-        background-color: var(--background-color, #f9f9f9);
-        position: relative;
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    /* Dark mode adjustments - using data-theme attribute selectors if available, 
-     or relying on CSS variables that change with theme */
-    [data-theme="dark"] .timeline-content {
-        background-color: #2a2a2a;
-        border: 1px solid #444;
+        left: -8px;
     }
 
     .timeline-date {
         font-weight: bold;
-        color: var(--primary-color, #0056b3);
-        margin-bottom: 8px;
+        color: var(--global-link-color, #b58900);
+        margin-bottom: 5px;
         display: block;
         font-size: 0.9em;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-family: inherit;
     }
 
     .timeline-title {
         margin-top: 0;
         margin-bottom: 5px;
         font-size: 1.25em;
+        font-family: inherit;
+        font-weight: 700;
     }
 
     .timeline-subtitle {
         font-style: italic;
         margin-bottom: 10px;
-        opacity: 0.8;
+        opacity: 0.9;
+        font-size: 0.95em;
     }
 
-    /* Media queries - Responsive timeline on screens less than 600px wide */
+    /* Media queries - Responsive timeline on screens less than 768px wide */
     @media screen and (max-width: 768px) {
         .timeline-container::after {
             left: 31px;
@@ -147,18 +197,6 @@
         .right {
             left: 0%;
         }
-    }
-
-    /* Animation Styles */
-    .timeline-card {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .timeline-card.fade-in {
-        opacity: 1;
-        transform: translateY(0);
     }
 </style>
 
