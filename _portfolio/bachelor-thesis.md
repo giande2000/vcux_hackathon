@@ -1,6 +1,6 @@
 ---
 title: "Designing Textile Interfaces for Automated Vehicles"
-excerpt: "Bachelor Thesis: Exploring Feedforward Cues for Intuitive yet Engaging Interactions.<br/><img src='/project/Gianluca_Decaro___Bachelor_Thesis/images/Proposed%20Paradigm.png'>"
+excerpt: "Bachelor Thesis: Exploring Feedforward Cues for Intuitive yet Engaging Interactions."
 collection: portfolio
 date: 2025-08-04
 ---
