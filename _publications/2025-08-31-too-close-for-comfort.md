@@ -83,47 +83,63 @@ html[data-theme="retro-terminal"] .download-btn:hover {
 }
 
 html[data-theme="retro-terminal"] .banner-image,
-html[data-theme="retro-terminal"] .card {
+html[data-theme="retro-terminal"] .pub-card {
     border-radius: 0;
-    border: 1px solid var(--global-border-color);
-    box-shadow: none;
+    border: 2px solid var(--global-border-color);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.5); /* Hard shadow for retro feel */
+}
+
+html[data-theme="retro-terminal"] .pub-card {
+    font-family: "Courier New", Courier, monospace;
+}
+
+html[data-theme="retro-terminal"] .nav-btn {
+    border-radius: 0;
+    font-family: "Courier New", Courier, monospace;
+    border: 2px solid var(--global-border-color);
 }
 
 /* Card System */
-.card-deck {
+.pub-card-deck {
     position: relative;
     min-height: 500px;
     margin-bottom: 2rem;
     perspective: 1000px;
 }
 
-.card {
-    background: #fff;
-    background: var(--background-color, #fff); /* Fallback */
-    border: 1px solid #eee;
-    border-color: var(--global-border-color, #eee);
+/* Default State (Light Theme) */
+.pub-card {
+    background-color: #eee8d5 !important;
+    background-color: var(--global-code-background-color, #eee8d5) !important;
+    border: 2px solid #93a1a1 !important;
+    border: 2px solid var(--global-border-color, #93a1a1) !important;
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    display: none; /* Hidden by default */
+    display: none;
     animation: fadeIn 0.5s ease;
     color: #333;
     color: var(--global-text-color, #333);
 }
 
-/* Dark Mode Support (if using generic data-theme="dark" or media query) */
-@media (prefers-color-scheme: dark) {
-    .card {
-        background: #2a2a2a;
-        color: #ddd;
-    }
-}
-html[data-theme="dark"] .card {
-    background: #1a1a1a; /* Example dark bg */
-    background: var(--global-bg-color, #1a1a1a); 
+/* Retro Terminal Explicit Override */
+html[data-theme="retro-terminal"] .pub-card {
+    background-color: #eee8d5 !important;
+    border-color: #93a1a1 !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.5) !important;
+    font-family: "Courier New", Courier, monospace !important;
 }
 
-.card.active {
+/* Dark Mode Explicit Override */
+html[data-theme="dark"] .pub-card {
+    background-color: #2a2a2a !important;
+    border-color: #555 !important;
+    color: #ddd !important;
+    box-shadow: none !important;
+}
+
+.pub-card.active {
     display: block;
 }
 
@@ -155,12 +171,14 @@ html[data-theme="dark"] .card {
 
 .nav-btn:hover:not(:disabled) {
     background-color: rgba(0,0,0,0.05);
-    border-color: #aaa;
+    border-color: var(--global-link-color, #0056b3);
+    color: var(--global-link-color, #0056b3);
 }
 
 .nav-btn:disabled {
     opacity: 0.5;
     cursor: default;
+    border-color: var(--global-border-color, #ddd);
 }
 
 .progress-indicators {
@@ -176,6 +194,10 @@ html[data-theme="dark"] .card {
     background-color: var(--global-border-color, #ddd);
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+html[data-theme="retro-terminal"] .dot {
+    border-radius: 0; /* Square dots for retro */
 }
 
 .dot.active {
@@ -250,10 +272,10 @@ html[data-theme="dark"] .card {
     <button id="nextBtn" class="nav-btn" onclick="changeCard(1)">Next &#8594;</button>
 </div>
 
-<div class="card-deck" id="cardDeck">
+<div class="pub-card-deck" id="cardDeck">
 
     <!-- Card 1: Abstract -->
-    <div class="card active" data-title="Abstract">
+    <div class="pub-card active" data-title="Abstract">
         <h2>Abstract</h2>
         <p>Urban Air Mobility (UAM) has the potential to revolutionize commuting by allowing passengers to travel quickly and efficiently within and between cities and airports. However, this innovation also raises concerns for residents on the ground, who are expected to tolerate frequent eVTOL overflights above their homes - an issue that this paper seeks to address.</p>
         <p>To investigate acceptance of eVTOLs from the perspective of residents on the ground being overflown at 1000 ft, 1500 ft, and 2000 ft, a virtual reality study was conducted.</p>
@@ -261,7 +283,7 @@ html[data-theme="dark"] .card {
     </div>
 
     <!-- Card 2: Introduction -->
-    <div class="card" data-title="Introduction">
+    <div class="pub-card" data-title="Introduction">
         <h2>Introduction</h2>
         <p>Electric Vertical Take-Off and Landing vehicles (eVTOLs) are being developed to fly passengers on predefined routes at low altitudes. However, this might raise concerns for residents on the ground.</p>
         <p>Key concerns identified in literature include:</p>
@@ -275,7 +297,7 @@ html[data-theme="dark"] .card {
     </div>
 
     <!-- Card 3: Method -->
-    <div class="card" data-title="Measurements">
+    <div class="pub-card" data-title="Measurements">
         <h2>Method & VR Simulation</h2>
         <p>To investigate these questions, we created a high-fidelity VR simulation using Unity.</p>
         <p><strong>Scenario:</strong> Participants lay on a sun lounger in a private backyard terrace within a calm suburban environment. They experienced overflights at three altitudes:</p>
@@ -292,7 +314,7 @@ html[data-theme="dark"] .card {
     </div>
 
     <!-- Card 4: Results (Visuals) -->
-    <div class="card" data-title="Results: Disturbance">
+    <div class="pub-card" data-title="Results: Disturbance">
         <h2>Results: Disturbance Factors</h2>
         <p>The study revealed that flight altitude significantly impacts the feeling of being disturbed.</p>
         <figure style="margin: 20px 0;">
@@ -304,7 +326,7 @@ html[data-theme="dark"] .card {
     </div>
 
     <!-- Card 5: Results (Safety & Privacy) -->
-    <div class="card" data-title="Results: Safety & Privacy">
+    <div class="pub-card" data-title="Results: Safety & Privacy">
         <h2>Results: Safety & Privacy</h2>
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
            <div>
@@ -319,7 +341,7 @@ html[data-theme="dark"] .card {
     </div>
 
     <!-- Card 6: Conclusion -->
-    <div class="card" data-title="Conclusion">
+    <div class="pub-card" data-title="Conclusion">
         <h2>Conclusion</h2>
         <p>While a brief VR experience didn't change general acceptance attitudes, the <strong>specific operational parameters matter significantly</strong>.</p>
         <ul>
@@ -342,7 +364,7 @@ html[data-theme="dark"] .card {
 
 <script>
     let currentCard = 0;
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.pub-card');
     const dotsContainer = document.getElementById('dotsContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
