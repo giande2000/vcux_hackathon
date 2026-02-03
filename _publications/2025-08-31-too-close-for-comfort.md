@@ -198,6 +198,11 @@ html[data-theme="dark"] .pub-card {
 
 html[data-theme="retro-terminal"] .dot {
     border-radius: 0; /* Square dots for retro */
+    opacity: 0.5; /* Make inactive dots lighter/less visible */
+}
+
+html[data-theme="retro-terminal"] .dot.active {
+    opacity: 1; /* Keep active dot fully visible */
 }
 
 .dot.active {
