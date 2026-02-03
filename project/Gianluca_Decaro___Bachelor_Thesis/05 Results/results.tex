@@ -1,0 +1,728 @@
+% Kapitel - Results
+\section{Results}
+% Quantitative results of the study were analyzed using the statistical software JASP 0.19.3 \cite{JASP2025}.
+This section presents the quantitative and qualitative findings from the user study. The results are structured to compare the effects of the three feedforward conditions (Inherent Cues, Augmented Light Cues, and Augmented Text Cues) across key metrics of performance, usability, and user experience. For simplicity, these will henceforth be referred to as the \textbf{Inherent Cues}, \textbf{Light Cues}, and \textbf{Text Cues} conditions.
+
+% The section begins with
+First, an analysis of the objective performance data, including task success and failure rates is presented. This is followed by the presentation of subjective ratings of user experience from each scenario and the final standardized questionnaires, which cover perceived usability, user experience, intuitiveness, and emotional response. Finally, qualitative themes derived from user interviews are detailed to provide context for the statistical findings.
+
+% Demographics have been revised and moved to the Methodology
+\begin{comment}
+\subsection{Demographics}
+%Sample, gender and age
+A total of 30 participants volunteered for the user study. This sample included seventeen women (56.67\%) and thirteen men (43.33\%), between the ages of 20 and 42 (\textit{M} = 24.90, \textit{SD} = 4.71). One participant decided to not disclose their age.
+
+%Country of origin
+Of all participants, the majority (n=18, 60.00\%) reported Germany as their country of origin. Other notable countries of origin included India (n=3, 10.00\%) and Brazil (n=2, 6.67\%).
+The remaining participants (n=6, 3.33\% each) represented diverse countries, specifically Bangladesh, Greece, Pakistan, Russia, Spain, and Turkey. One participant decided not to disclose their country of origin.
+
+%Handedness
+Most of the participants were right handed (n=25, 83.33\%), with only a small percentage reporting being left handed (n=5, 16.67\%).
+
+%Experience with textiles
+The majority of the participants also had no previous experience with textile interfaces (n=22, 73.33\%). Those who reported previous experiences with textile interfaces (n=8, 26.67\%) mentioned mainly home voice assistants such as Google Home devices (n=4), Amazon's Alexa (n=2), and the Apple Homepod (n=1). Other textile interfaces mentioned were control panels (n=1), exhibitions in museums (n=1), clothing that reacts on touch (n=1), and other prototype textile interfaces (n=1).
+
+%Technology Interest and Savviness
+Participants were also asked to rate their own technology interest on a 5-point Likert scale ranging from "Very uninterested" to "Very interested". The mean for this question was \textit{M }= 4.63 (\textit{SD} = 0.81), with the median being 5, "Very interested". Most participants (n=22, 73.33\%) chose "Very interested", with fewer (n=4, 23.33\%) choosing "Interested", and only one person choosing "Very uninterested" (n=1, 3.33\%). The response options "Uninterested" and "Neutral" were not chosen by any participants.
+Similarly, participant's own perceived technology savviness was rated on a 5-point Likert scale ranging from "not at all" to "extremely". The mean for this question was M = 4.07 (S = 0.70), with the median being 4, "Very". Most participants (n=16, 53.33\%) reported being "very" tech savvy, with some (n=8, 26.67\%) reporting being "extremely" tech savvy, and other participants (n=6, 20.00\%) reporting being "moderately" tech savvy. The response options "not at all" and "slightly" tech savvy were not chosen by any participants.
+\end{comment}
+
+\subsection{Success and Failure Rates}
+
+% Success was defined as performing the correct interaction on the first try. If a participant performed the wrong gesture, it counts as a failure. Participants were allowed to try as many gestures as they wanted until they figured out the correct gesture, gave up and asked for a hint, or were given a hint from the study leader after roughly 30-40 seconds.
+
+For the objective performance analysis, a "success" was defined as a participant performing the correct interaction for a task on their first attempt. An initial incorrect interaction was classified as a "failure", and each subsequent wrong gesture was logged as a "failed attempt". In the event of a failure, participants were allowed to continue exploring the interface until one of two conditions was met: they successfully completed the task by performing the right gesture or the study conductor intervened with a hint after approximately 30 to 45 seconds if the participant was unable to complete a task.
+
+\subsubsection{Success Rates}
+To analyze the overall performance, participant success rates were calculated by dividing the number of tasks completed successfully on the first attempt by the total number of tasks across all scenarios.  
+%Overall Success Rate
+A one-way \gls{ANOVA} indicated a significant effect of the feedforward condition on first-attempt success rates, $F(2, 27) = 5.75$, $p = .008$. As illustrated by Fig. \ref{fig:success-rates-condition}, the \textbf{Light Cues} condition had the highest success rate at 87.04\%, ($M = 0.87$, $SD = 0.07$), followed by the \textbf{Inherent Cues} condition with a success rate of 78.52\% ($M = 0.78$, $SD = 0.06$), and the \textbf{Text Cues} condition with the lowest success rate at 77.41\% ($M = 0.77$, $SD = 0.07$). Holm-corrected post hoc tests revealed that the success rate in the \textbf{Light Cues} condition was significantly higher than in the \textbf{Inherent Cues} condition ($Mdiff = -0.08$, $SE = 0.03$, $t = -2.74$, $p = .021$) and the \textbf{Text Cues} condition ($Mdiff = 0.10$, $SE = 0.31$, $t = 3.10$, $p = .013$). No significant differences were found between the \textbf{Inherent Cues} and \textbf{Text Cues} conditions ($p = .723$).
+
+% Holm-corrected post hoc tests revealed that the success rate of the Inherent Cues condition was significantly lower than the Light Cues, $Mdiff = -0.08$, $SE = 0.03$, $t = -2.74$, $p = .021$. The post hoc test also revealed the Text Cues success rate to be significantly lower than the Light Cues, $Mdiff = 0.10$, $SE = 0.31$, $t = 3.10$, $p = .013$.
+
+% Figure \ref{fig:success-rates-condition} illustrates the average success rates across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.58\linewidth]{images//Results/Success rates - per condition.png}
+    \caption{Observational Data: Average success rates per condition.}
+    \label{fig:success-rates-condition}
+\end{figure}
+
+% Discussion: Overall, the Light Cues condition performed significantly better than both the Inherent and Text Cues conditions.
+
+%Success rate per condition across scenarios
+To examine how success rates varied by scenario, participants' success rates were calculated for each scenario and a two-way mixed model \gls{ANOVA} was conducted. The analysis revealed a significant main effect of the feedforward condition on performance across the four scenarios (Welcome, Music, Spotlight, and Call), $F(2, 27) = 4.06$, $p = .029$.
+
+Descriptive statistics, visualized in Fig. \ref{fig:success-rates-scenario}, showed that in the initial \textbf{\hyperref[ws2-welcome-scenario]{Welcome Scenario}}, participants in the \textbf{Light Cues} condition performed best ($M = 0.85$, $SD = 0.13$), followed by \textbf{Inherent Cues} ($M = 0.75$, $SD = 0.12$) and \textbf{Text Cues} ($M = 0.73$, $SD = 0.08$). Performance dipped for all groups in the \textbf{\hyperref[ms2-navigate-home-menu]{Music Scenario}}, however, \textbf{Light Cues} again showed the highest mean performance ($M = 0.78$, $SD = 0.08$), compared to \textbf{Text Cues} ($M = 0.72$, $SD = 0.14$) and \textbf{Inherent Cues} ($M = 0.67$, $SD = 0.11$). Success rates increased across all conditions in the latter two scenarios. In the \textbf{\hyperref[ss2-navigate-home-menu]{Spotlight Scenario}}, scores were closely clustered, with the \textbf{Text Cues} condition yielding the highest mean performance ($M = 0.92$, $SD = 0.14$), closely followed by \textbf{Light Cues} ($M = 0.90$, $SD = 0.14$) and \textbf{Inherent Cues} ($M = 0.86$, $SD = 0.16$). In the final \textbf{\hyperref[cs2-incoming-call]{Call Scenario}}, the \textbf{Light Cues} condition once again achieved the highest average score ($M = 0.95$, $SD = 0.06$), while\textbf{ Inherent Cues} and\textbf{ Text Cues} were slightly lower ($M = 0.86$, $SD = 0.12$; $M = 0.84$, $SD = 0.13$, respectively).
+
+% Figure \ref{fig:success-rates-scenario} illustrates the differences in success rates across scenarios and conditions.
+
+% \begin{table}[h!]
+% \centering
+% \caption{Mean Success Rates (and Standard Deviations) per Scenario.}
+% \label{tab:success-rates-scenario}
+% \begin{tabular}{l c c c}
+% \hline
+% \textbf{Scenario} & \textbf{Inherent Cues} & \textbf{Light Cues} & \textbf{Text Cues} \\
+% \hline
+% Welcome & .75 (.12) & .85 (.13) & .73 (.08) \\
+% Music & .67 (.11) & .78 (.08) & .72 (.14) \\
+% Spotlight & .86 (.16) & .90 (.14) & .92 (.14) \\
+% Call & .86 (.12) & .95 (.06) & .84 (.13) \\
+% \hline
+% \end{tabular}
+% \end{table}
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/Results/Success rates - per Scenario.png}
+    \caption{Observational Data: Average success rates across conditions, represented per scenario, with 95\% confidence intervals.}
+    \label{fig:success-rates-scenario}
+\end{figure}
+
+% Post hoc analyses using Holm's correction revealed that participants in the Light Cues condition performed significantly better than those in the Inherent Cues condition, $Mdiff = -0.08$, $t = -2.67$, $p = .038$. There was no statistically significant difference between the Inherent Cues and Text Cues conditions ($Mdiff = –0.015$, $t = -0.47$, $p = .639$), nor between Light Cues and Text Cues ($Mdiff = 0.069$, $t = 2.20$, $p = .074$).
+Post hoc comparisons using Holm's correction were conducted to examine the specific differences between conditions. The analysis showed that while the \textbf{Light Cues} condition led to significantly better performance than the \textbf{Inherent Cues} condition ($Mdiff = -0.08$, $SE = 0.32$, $t = -2.67$, $p = .038$), its advantage over the \textbf{Text Cues} condition did not reach statistical significance ($p = .074$). Furthermore, no significant difference was found between the \textbf{Inherent Cues} and \textbf{Text Cues} conditions ($p = .639$).
+
+\subsubsection{Failure Rates} \label{sec:failure-reates}
+%TODO
+% Include results with and without hints
+%Redo title later
+To complement the analysis of success rates, we examined the number of \textbf{failed attempts} and hints given across the three conditions. A failed attempt was counted every time a participant performed an incorrect gesture. For the per-scenario analysis, these counts were then averaged to determine the mean number of failed attempts per task within each scenario.
+The \textbf{hints} refer to instances where participants either asked for help or were given assistance by the experimenter after approximately 30–45 seconds. These were counted for each participant within a scenario, and these counts were then averaged to compare the conditions. 
+
+% Importantly, to account for potential bias introduced by externally provided hints, a separate analysis of failed attempts was conducted excluding participants who received help from the study conductor.
+Hints provided by the study conductor represent an external influence that could alter a participant's natural discovery process. A participant who received a hint might have otherwise required more attempts or may not have found the correct gesture at all. 
+%Therefore, to isolate and analyze the unassisted learning process, a separate analysis of failed attempts was conducted, which only included participants who successfully found the correct interactions without any help. 
+Consequently, the recorded number of failed attempts may not fully represent the unassisted learning process and has to be interpreted carefully with this influence in mind.
+
+%Note: for the second one, report the n=n participants left for each condition
+
+\paragraph{Average Failed Attempts Across All Participants}
+%TODO: Include actual raw averages (with figure?) 
+
+A two-way mixed model \gls{ANOVA} was conducted to analyze the average number of failed attempts per task for each scenario. The analysis revealed a significant main effect of the feedforward condition,  $F(2,27) = 11.21, p < .001$, indicating a consistent difference in performance between the groups across the study.
+
+% Descriptive statistics indicate that the Inherent Cues condition required the most attempts on average ($M = 1.34$, $SD = 1.29$), followed by the Text Cues condition ($M = 1.10$, $SD = 0.83$) and the Light Cues condition ($M = 0.36$, $SD = 0.51$).
+
+As illustrated in Fig. \ref{fig:attempts-overall}, participants in the \textbf{Light Cues} condition consistently required the fewest attempts. The difference between feedforward conditions was most pronounced in the initial scenarios. In the \textbf{\hyperref[ws2-welcome-scenario]{Welcome Scenario}}, the \textbf{Inherent Cues} and \textbf{Text Cues} conditions averaged above two failed attempts ($M = 2.35$, $SD = 2.34$; $M = 2.20$, $SD = 1.48$, respectively), while the \textbf{Light Cues} condition averaged less than one ($M = 0.38$, $SD = 0.54$). This pattern continued in the \textbf{\hyperref[ms2-navigate-home-menu]{Music Scenario}}, which saw the highest number of attempts for the \textbf{Inherent Cues} condition ($M = 2.57$, $SD = 0.92$) and the \textbf{Text Cues} condition ($M = 1.67$, $SD = 0.61$). The \textbf{Light Cues} condition again resulted in the fewest failed attempts ($M = 0.91$, $SD = 0.82$). In the later \textbf{\hyperref[ss2-navigate-home-menu]{Spotlight}} (Inherent Cues: $M = 0.24$, $SD = 0.56$; Light Cues:$ M = 0.10$, $SD = 0.25$; Text Cues: $M = 0.34$, SD = $0.44$) and \textbf{\hyperref[cs2-incoming-call]{Call}} (Inherent Cues: $M = 0.20$, SD = $0.17$; Light Cues: $M = 0.06$, $SD = 0.09$; Text Cues: $M = 0.20$, $SD = 0.16$) scenarios, performance improved dramatically for all groups, and the average number of attempts converged toward zero. Overall, the \textbf{Inherent Cues} condition led to the most failed attempts on average ($M = 1.34$, $SD = 1.29$), followed by the \textbf{Text Cues} condition ($M = 1.10$, $SD = 0.83$) and the \textbf{Light Cues} condition ($M = 0.36$, $SD = 0.51$).
+
+Overall, Holm-corrected post hoc comparisons confirmed that the \textbf{Light Cues} condition led to significantly less failed attempts than the \textbf{Inherent Cues} condition ($Mdiff = -0.98$, $SE = 0.22$, $t = -4.54$, $p < .001$) and the \textbf{Text Cues} condition ($Mdiff = -0.74$, $SE = 0.22$, $t = -3.44$, $p = .004$). No significant difference was found between the \textbf{Inherent Cues} and \textbf{Text Cues} conditions ($p = .280$).
+
+% Overall, Holm-corrected post hoc comparisons confirmed that the Inherent Cues condition led to significantly more failed attempts than the Light Cues condition ($Mdiff = 0.98$, $SE = 0.22$, $t = 4.54$, $p < .001$). The Text Cues condition also resulted in significantly more attempts than the Light Cues condition ($Mdiff = 0.74$, $SE = 0.22$, $t = 3.44$, $p = .004$). No significant difference was found between the Inherent and Text Cues conditions ($Mdiff = 0.24$, $SE = 0.22$, $t = 1.10$, $p = .280$).
+
+% Figure \ref{fig:attempts-overall} shows the average number of attempts per scenario across all conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/Results/Average Attempts - Per Scenario.png}
+    \caption{Observational Data: Average of incorrect attempted gestures per scenario across conditions, with 95\% confidence intervals.}
+    \label{fig:attempts-overall}
+\end{figure}
+
+\paragraph{Number of Hints per Condition}
+%TODO: Include actual raw averages (with figure?) 
+A two-way mixed-model \gls{ANOVA} revealed a significant main effect of the condition on the number of hints required by participants, $F(2, 27) = 6.66$, $p = .005$.
+
+As shown in Fig. \ref{fig:hints-overall}, the \textbf{Inherent Cues} condition consistently required the most external help, with the overall need for hints being entirely concentrated in the first two scenarios. The \textbf{\hyperref[ws2-welcome-scenario]{Welcome Scenario}} saw participants in the Inherent Cues and Text Cues conditions requiring hints ($M = 0.40$, $SD = 0.52$ and $M = 0.30$, $SD = 0.48$, respectively), while no participant in the Light Cues group needed assistance. The \textbf{\hyperref[ms2-navigate-home-menu]{Music Scenario}} was the most challenging, particularly for the Inherent Cues group, which required an average of $1.40$ hints ($SD = 0.70$). The Text Cues group also required assistance ($M = 0.70$, $SD = 0.82$), while the Light Cues group needed the fewest hints ($M = 0.40$, $SD = 0.70$). The need for hints diminished entirely in the \textbf{\hyperref[ss2-navigate-home-menu]{Spotlight}} and \textbf{\hyperref[cs2-incoming-call]{Call}} scenarios; no participant in any of the three conditions required a single hint.
+
+On average, participants in the \textbf{Inherent Cues} condition required the most hints ($M = 0.45$, $SD = 0.43$), followed by the \textbf{Text Cues} condition ($M = 0.25$, $SD = 0.48$) and the \textbf{Light Cues} condition ($M = 0.10$, $SD = 0.35$).
+
+Holm-corrected post hoc tests showed that significantly more hints were required in the \textbf{Inherent Cues} condition than in the \textbf{Light Cues} condition, $Mdiff = 0.35$, $SE = 0.10$, $t = 3.64$, $p = .003$. The difference between \textbf{Inherent Cues} and \textbf{Text Cues} was not statistically significant ($p = .095$), nor was the difference between \textbf{Light Cues} and \textbf{Text Cues} ($p = .131$).
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/Results/Average Hints - per Scenario.png}
+    \caption{Observational Data: Average amount of external hints given per scenario across all conditions, with 95\% confidence intervals}
+    \label{fig:hints-overall}
+\end{figure}
+
+% \paragraph{Average Failed Attempts Without Hints}
+% A separate analysis was conducted to evaluate the number of attempts for only those participants who successfully found the correct gesture without receiving any hints. This reduced the number of included participants per condition, resulting in the Inherent condition having $n = 6$, Light Cues having $n = 10$, and Text Cues having $n = 7$.
+
+% %The fact that Light Cues has all their og participants means the feedforward worked better to help them recover from mistakes??
+
+% The two-way mixed-model \gls{ANOVA} again showed a significant main effect of condition on the number of attempts, $F(2, 20) = 10.21$, $p < .001$.
+
+%  For this subset of participants, descriptive statistics indicated that participants in the \textbf{Text Cues} condition required the most attempts ($M = 1.36$, $SD = 1.18$), followed by \textbf{Inherent Cues} ($M = 0.57$, $SD = 0.65$) and \textbf{Light Cues} ($M = 0.29$, $SD = 0.46$).
+
+% Holm-corrected post hoc tests showed that participants in the \textbf{Text Cues} condition required significantly more attempts than those in the \textbf{Light Cues} condition, $Mdiff = 0.64$, $SE = 0.14$, $t = 4.52$, $p < .001$. The difference between \textbf{Inherent Cues} and \textbf{Text Cues} was marginally significant, $p = .071$. The comparison between Inherent and Light Cues was not significant, $p = .074$.
+
+% Figure X illustrates the average amount of attempts required by all participants who figured out the correct gesture without requiring hints.
+
+% %%%% FIGURE MISSING %%%%%
+
+\paragraph{Pain Point: The Select Destination Task}
+The \hyperref[ws2-destination-selection]{Select Destination} Task in the \hyperref[ws2-welcome-scenario]{Welcome Scenario} was the first task where most participants started doing incorrect gestures, multiple times.
+
+%What the most common first-time gestures were:
+%The Select Destination Task in the Welcome Scenario (see Table ??) was the first instance where the majority of participants began performing incorrect gestures, often repeatedly.
+
+The intended gesture for this task was a swipe inward from the left section toward the center. However, the most common failed attempt was a tap on the left section, performed by a total of $n = 16$ participants (Inherent Cues $n = 7$, Light Cues $n = 5$, Text Cues $n = 4$).
+
+The second most frequent incorrect gesture, observed in $n = 4$ participants, was a swipe in the wrong direction, specifically outward from the center within the left section (Text Cues $n = 2$, Light Cues $n = 1$, Inherent Cues $n = 1$).
+
+Another incorrect gesture was tapping on the left side of the rotary dial, reported in $n = 3$ participants (Text Cues $n = 2$, Inherent Cues $n = 1$).
+
+Two additional unique gestures were observed, each performed by $n = 1$ participants, both in the Text Cues condition: rotating the center button counterclockwise and swiping left within the center button.
+%The fact that the last 2 were done in the text cues, reinforces the problem of text being potentially ambiguous?
+
+
+%Number of times each incorrect gesture were done:
+
+\paragraph{Pain Point: Starting Playback}
+The \hyperref[ms2-start-playback]{Start Playback} Task in the \hyperref[ms2-open-music-app]{Music Scenario} was another noticeable pain point, where many participants required several attempts to discover the correct gesture or ultimately needed a hint to proceed.
+
+The intended gesture for this task was rotating on the dial clockwise, mimicking the action of “spinning a record.” However, the most common incorrect gesture was tapping on the center button, performed by a total of $n = 15$ participants (Inherent Cues $n = 8$, Light Cues $n = 5$, Text Cues $n = 2$). Additionally, $n = 1$ participant in the Text Cues condition attempted a double tap on the center button instead.
+
+Other incorrect gestures included swiping up on the top section ($n = 1$, Text Cues), tapping on the outer circle ($n = 1$, Text Cues), swiping toward the center from the right section ($n = 1$, Inherent Cues), and rotating the outer circle counterclockwise instead of clockwise ($n = 1$, Text Cues).
+
+\subsection{\gls{UX} Curve}
+The \gls{UX} Curve was used to track participants' subjective experience after each of the four scenarios on a scale from -3 (very bad) to +3 (very good). A one-way \gls{ANOVA} on the average scores revealed a statistically significant difference between the conditions , $F(2, 27) = 5.10$, $p = .013$.
+
+As illustrated in Fig. \ref{fig:ux-curve}, the trajectory of the user experience varied notably between the conditions. In the initial \textbf{\hyperref[ws2-welcome-scenario]{Welcome Scenario}}, both the Light Cues ($M = 2.20$, $SD = 1.03$) and Text Cues ($M = 2.10$, $SD = 0.74$) conditions received high positive ratings, while the Inherent Cue condition started closer to neutral ($M = 0.50$, $SD = 1.90$). This gap widened in the \textbf{\hyperref[ms2-navigate-home-menu]{Music Scenario}}, where the experience of the Inherent Cues group dropped to a negative rating ($M = -0.10$, $SD = 1.97$). The Light Cues ($M = 1.80$, $SD = 1.03$) and Text Cues ($M = 1.10$, $SD = 1.52$) conditions also saw a dip in this scenario but remained positive. Participants reported a strong recovery in the \textbf{\hyperref[ss2-navigate-home-menu]{Spotlight Scenario}} (Inherent Cues: $M = 2.00$, $SD = 1.25$; Light Cues: $M = 2.50$, $SD = 0.71$; Text Cues: $M = 2.10$, $SD = 0.74$) and the final \textbf{\hyperref[cs2-incoming-call]{Call Scenario}} (Inherent: $M = 2.50$, $SD = 0.53$; Light Cues: $M = 2.70$, $SD = 0.67$; Text Cues: $M = 2.60$, $SD = 0.70$), with all conditions ending with highly positive ratings.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/Results/UX Curve.png}
+    \caption{\gls{UX} Curve scores per scenario across conditions, with 95\% confidence intervals.}
+    \label{fig:ux-curve}
+\end{figure}
+
+Holm-corrected post hoc comparisons of the overall average scores revealed that the Light Cues condition was rated significantly higher than the Inherent Feedforward condition ($Mdiff = -1.08$, $SE = 0.35$, $t = -3.11$, $p = .013$). No other comparisons were statistically significant.
+
+% Figure \ref{fig:ux-curve} illustrates the UX Curve averages across conditions and scenarios.
+
+
+
+\subsection{System Usability Scale (\gls{SUS})}
+%Usability score
+To evaluate overall perceived usability, the System Usability Scale (\gls{SUS}) was administered. A one-way \gls{ANOVA} revealed a statistically significant difference between the three feedforward conditions, $F(2, 27) = 7.54$, $p = .003$.
+
+As shown in Fig. \ref{fig:sus}, the \textbf{Light Cues} condition received the highest mean \gls{SUS} score ($M = 88.50$, $SD = 11.50$), followed closely by the \textbf{Text Cues} condition ($M = 80.50$, $SD = 13.98$). In contrast, the \textbf{Inherent Cues} condition showed a lower rate with $M = 62.25$, $SD = 19.81$. According to the adjective ratings proposed by Bangor et al. \cite{Bangor_SUS_2008}, scores between 70 (good) to 85 (excellent) are considered acceptable, while values between 50 (OK)  to 70 (good) are marginal, showing usability problems and need for improvement.
+
+
+% The overall usability scores showed high rates for both the Light Cues condition ($M = 83.86$) and the Text Cues condition ($M = 81.59$). The Inherent Cues condition showed a lower rate with $M = 62.25$. Bangor et al. \cite{Bangor_SUS_2008} found scores between 70 to 85 to be from good to excellent, while values between 50 to 70 show usability problems and need for improvement.
+
+%The overall usability defined by the SUS score (range: 0–100) shows high rates for both infotainment (M = 76.4) and entertainment functions (M = 80.1). According to literature, values above 70 indicate a good up to excellent usability while ratings between 60 and 70 can be interpreted as marginal up to good. Ratings lower than 60 typically indicate considerable usability problems [3].
+
+%Bangor et al. (2008; 2009) also wanted to add an interpretation of the SUS score. To this end, they compared the quartiles of the SUS score and adjective ratings of perceived usability. They found that if the SUS score is over 85 the system/product is highly usable, over 70 to 85 it is characterized from good to excellent, a value from about 50 to about 70 shows that the system is acceptable but it has some usability problems and needs improvement, and finally a system with SUS score below 50 is considered unusable and unacceptable.
+
+%Statistical analysis
+% A one-way ANOVA also reveals statistically significant differences between the SUS scores, $F(2, 27) = 7.54$, $p = .002$.
+
+% Figure \ref{fig:sus} shows the SUS scores obtained per condition, along with the confidence intervals.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/Results/SUS.png}
+    \caption{\gls{SUS} scores across conditions, with 95\% confidence intervals.}
+    \label{fig:sus}
+\end{figure}
+
+
+Post hoc comparisons using Holm's correction revealed that \gls{SUS} scores for the \textbf{Inherent Cues} condition were significantly lower than those in the \textbf{Light Cues} ($Mdiff = -26.25$, $SE = 6.93$, $t = -3.79$, $p = .002$) and \textbf{Text Cues} ($Mdiff = -18.25$, $SE = 6.93$, $t = -2.63$, $p = .028$) conditions. No significant difference was found between the \textbf{Light Cues} and \textbf{Text Cues} conditions ($p = .258$).
+
+\subsection{User Experience Questionnaire (\gls{UEQ})}
+To assess participants’ overall perceptions of the system’s user experience, the User Experience Questionnaire (\gls{UEQ}) was administered after all scenarios were completed. The \gls{UEQ} evaluates six dimensions: Attractiveness, Perspicuity, Efficiency, Dependability, Stimulation, and Novelty, each rated on a 7-point semantic differential scale ranging from -3 (fully negative) to +3 (fully positive). Additionally, the \gls{UEQ} provides summary scores for insights into the Pragmatic Quality (goal-oriented aspects) and Hedonic Quality (non-goal-oriented aspects) of a product or system \cite{team_ueq_ueq_2024}.
+The analysis of the \gls{UEQ} was conducted using JASP \cite{JASP2025}, with the figures based on the evaluation tool provided by the User Experience Questionnaire website \cite{team_ueq_ueq_2024}.
+
+\subsubsection{Attractiveness}
+To examine the effect of the feedforward conditions on the perceived attractiveness, a one-way \gls{ANOVA} was conducted. This revealed a significant difference across conditions, $F(2,27) = 4.26$, $p = .025$.
+
+As shown in Fig. \ref{fig:ueq-attractiveness}, the \textbf{Light Cues} condition received the highest average rating ($M = 2.68$, $SD = 0.63$), followed closely by the \textbf{Text Cues} condition ($M = 2.50$, $SD = 0.52$). The \textbf{Inherent Cues} condition was rated lowest ($M = 1.73$, $SD = 1.06$).
+
+% Descriptive statistics show the Inherent Cues condition having the lowest averages ($M = 1.73$, $SD = 1.06$), followed by the Explicit Cues condition ($M = 2.50$, $SD = 0.52$). The highest averages were for the Light Cues condition ($M = 2.68$, $SD = 0.63$).
+
+% Figure \ref{fig:ueq-attractiveness} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Atractiveness.png}
+    \caption{\gls{UEQ} Attractiveness differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-attractiveness}
+\end{figure}
+
+Post hoc comparisons using Holm's correction confirmed that the \textbf{Light Cues }condition was rated significantly more attractive than the \textbf{Inherent Cues} condition ($Mdiff = -0.95$, $SE = 0.34$, $t = -2.75$, $p = .031$). No significant difference was found between neither the \textbf{Inherent Cues} and \textbf{Text Cues} conditions ($p = .070$), nor between the \textbf{Light Cues} and \textbf{Text Cues} conditions ($p = .600$).
+
+
+\subsubsection{Pragmatic Quality}
+The Pragmatic Quality reports the goal-directed aspects of the \gls{UEQ}, summarized by the Perspicuity, Efficiency, and Dependability subscales. A one-way \gls{ANOVA} revealed significant differences in the impact of the feedforward conditions on the perceived pragmatic quality of the interface, $F(2, 27) = 4.86$, $p = .016$.
+
+As shown in Fig. \ref{fig:ueq-pragmatic}, the \textbf{Light Cues} condition scored highest ($M = 2.06$, $SD = 0.79$), followed by the \textbf{Text Cues} ($M = 1.80$, $SD = 0.56$). The \textbf{Inherent Cues} condition received the lowest pragmatic score out of all conditions ($M = 0.89$, $SD = 1.17$).
+
+% Descriptive statistics of the different conditions show the Light Cues condition as having the highest score ($M = 2.06$, $SD = 0.79$), followed by the Text Cues ($M = 1.80$, $SD = 0.56$). The Inherent Cues condition had the lowest score out of all conditions ($M = 0.89$, $SD = 1.17$).
+
+% Figure \ref{fig:ueq-pragmatic} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Pragmatic Quality.png}
+    \caption{\gls{UEQ} Pragmatic Quality differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-pragmatic}
+\end{figure}
+
+Holm corrected post-hoc tests revealed a significant difference between the \textbf{Inherent Cues} and \textbf{Light Cues} conditions ($Mdiff = -1.17$, $SE = 0.39$, $t = -2.97$, $p = .019$). No significant differences were found between the \textbf{Inherent Cues} and \textbf{Text Cues} ($p = .057$), or between the \textbf{Light Cues} and \textbf{Text Cues} ($p = .517$).
+
+\subsubsection{Hedonic Quality}
+For the Hedonic Quality, the non goal-directed subscales of the \gls{UEQ} are represented: Stimulation and Novelty. A one-way \gls{ANOVA} analysis revealed that the feedforward cues had a significant impact on the perceived hedonic qualities of the textile interface, $F(2, 27) = 5.14$, $p = .013$.
+
+As shown in Fig. \ref{fig:ueq-hedonic}, both augmented feedforward conditions were rated higher than the inherent cues alone. The \textbf{Text Cues} ($M = 2.64$, $SD = 0.20$) and the \textbf{Light Cues} ($M = 2.58$, $SD = 0.53$) conditions received the highest scores, while the \textbf{Inherent Cues} condition scored lowest ($M = 1.95$, $SD = 0.72$).
+
+% Figure \ref{fig:ueq-hedonic} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Hedonic Quality.png}
+    \caption{\gls{UEQ} Hedonic Quality differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-hedonic}
+\end{figure}
+
+Post hoc tests using Holm's correction confirmed this pattern. The perceived hedonic quality was significantly higher in the \textbf{Light Cues} condition compared to the \textbf{Inherent Cues} ($Mdiff = -0.63$, $SE = 0.24$, $t = -2.64$, $p = .028$). Similarly, the \textbf{Text Cues} condition also was significantly higher compared to the \textbf{Inherent Cues} ($Mdiff = -0.69$, $SE = 0.24$, $t = -2.90$, $p = .022$). No significant differences were found between the \textbf{Light Cues} and \textbf{Text Cues} ($p = .794$).
+
+\subsubsection{Perspicuity}
+Perspicuity measures how easy it is for a user to get familiar with and learn how to use the product. A one-way \gls{ANOVA} confirmed a significant difference between the conditions on this scale , $F(2,27) = 5.48$, $p = .010$.
+
+As shown in Fig.\ref{fig:ueq-perspicuity},  the \textbf{Light Cues} condition was rated highest for perspicuity ($M = 1.88$, $SD = 0.96$), followed closely by the \textbf{Text Cues} condition  ($M = 1.68$, $SD = 0.74$). The \textbf{Inherent Cues} condition received a much lower rating, close to neutral ($M = 0.40$, $SD = 1.43$).
+
+
+% Descriptive statistics show the Inherent Cues condition as having the lowest ratings ($M = 0.40$, $SD = 1.43$), followed by the Text Cues condition ($M = 1.68$, $SD = 0.74$). The highest perspicuity ratings were given in the Light Cues condition ($M = 1.88$, $SD = 0.96$).
+
+% Figure \ref{fig:ueq-perspicuity} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Perspicuity.png}
+    \caption{\gls{UEQ} Perspicuity differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-perspicuity}
+\end{figure}
+
+Holm corrected post hoc analyses revealed that both the \textbf{Light Cues} condition ($Mdiff = -1.48$, $SE = 0.48$, $t = -3.05$, $p = .015$) and the \textbf{Text Cues} condition ($Mdiff = -1.28$, $SE = 0.48$, $t = -2.64$, $p = .027$) were rated significantly higher than the \textbf{Inherent Cues} condition. No significant difference was found between the \textbf{Light Cues} and \textbf{Text Cues} conditions ($p = .682$).
+
+\subsubsection{Dependability}
+Dependability assesses if the user feels in control of the interaction and perceives it as predictable and secure. A one-way \gls{ANOVA} was conducted, revealing a significant overall difference between conditions, $F(2, 27) = 3.88$, $p = .033$.
+
+As shown in Fig. \ref{fig:ueq-dependability}, the \textbf{Inherent Cues} condition received the lowest average score ($M = 0.90$, $SD = 1.18$), followed by the\textbf{ Text Cues} condition ($M = 1.85$, $SD = 0.68$). The highest average was observed for the \textbf{Light Cues} condition ($M = 1.95$, $SD = 0.86$).
+
+% Figure \ref{fig:ueq-dependability} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Dependability.png}
+    \caption{\gls{UEQ} Dependability differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-dependability}
+\end{figure}
+
+While the overall \gls{ANOVA} revealed a significant effect of condition on perceived dependability, the follow-up post hoc tests did not identify statistically significant differences between the individual groups after applying Holm's correction. This is likely due to limited statistical power of the samples ($n=10$). Nonetheless, the results will be reported for transparency.
+
+Post hoc comparisons using Holm’s correction between \textbf{Light Cues} and \textbf{Inherent Cues} approached significance ($Mdiff = -1.05$, $SE = 0.42$, $t = -2.52$, $p = .054$), as did the comparison between \textbf{Text Cues} and \textbf{Inherent Cues} ($Mdiff = -0.95$, $SE = 0.42$, $t = -2.28$, $p = .061$). No significant difference was found between the \textbf{Light Cues} and \textbf{Text Cues} conditions ($p = .812$).
+
+\subsubsection{Novelty}
+Novelty measures whether the product is perceived as innovative and creative, and if it captures the user's interest. An analysis of this scale, using a one-way \gls{ANOVA}, revealed a significant difference between the three conditions, $F(2, 27) = 4.98$, $p = .014$.
+
+As shown in Fig. \ref{fig:ueq-novelty}, all versions of the interface were rated as highly novel. The \textbf{Text Cues} condition received the highest novelty rating ($M = 2.70$, $SD = 0.33$), followed closely by the \textbf{Light Cues} condition ($M = 2.53$, $SD = 0.61$). The \textbf{Inherent Cues} condition, while still rated very positively, scored the lowest of the three ($M = 1.78$, $SD = 0.99$).
+
+% Descriptive statistics show the Inherent Cues condition having the lowest average ($M = 1.78$, $SD = 0.99$), followed by the Light Cues condition ($M = 2.53$, $SD = 0.61$). The highest average was found in the Text Cues condition ($M = 2.70$, $SD = 0.33$).
+
+% Figure \ref{fig:ueq-novelty} illustrates the differences across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/Results/UEQ Novelty.png}
+    \caption{\gls{UEQ} Novelty differences across conditions, with 95\% confidence intervals.}
+    \label{fig:ueq-novelty}
+\end{figure}
+
+Post hoc comparisons using Holm’s correction revealed that the \textbf{Text Cues} condition ($Mdiff = -0.93$, $SE = 0.31$, $t = -2.97$, $p = .019$) and the \textbf{Light Cues} condition ($Mdiff = -0.75$, $SE = 0.31$, $t = -2.41$, $p = .046$) were rated significantly more novel than the \textbf{Inherent Cues} condition. The difference between the two augmented feedforward conditions was not statistically significant ($p = .579$).
+
+% (Mdiff = -0.93, SE = 0.31, t = -2.97, p = .019). The Light Cues condition was also rated significantly higher than the Inherent Cues condition (Mdiff = -0.75, SE = 0.31, t = -2.41, p = .046). No significant difference was found between the Text and Light Cues conditions (Mdiff = -0.18, SE = 0.31, t = -0.56, p = .579).
+
+
+%Non-significant UEQs -> Efficiency, Stimulation
+\subsubsection{Efficiency and Stimulation}
+% Analyses using a one-way ANOVA revealed no significant differences across conditions for the Efficiency and Stimulation subscales of the UEQ.
+
+Finally, one-way \gls{ANOVA} analyses of the Efficiency and Stimulation subscales revealed no statistically significant differences between the three feedforward conditions.
+
+Efficiency measures how productive users feel with the product. Although the differences were not statistically significant, the descriptive data showed a trend (see Fig. \ref{fig:ueq-efficiency}a) where the \textbf{Light Cues} condition was rated highest ($M = 2.35$, $SD = 0.67$), followed by the \textbf{Text Cues} ($M = 1.88$, $SD = 0.54$) and \textbf{Inherent Cues} conditions $(M = 1.38$, $SD = 1.23$).
+
+Stimulation assesses whether the product is exciting and fun to use. A similar non-significant trend (see Fig. \ref{fig:ueq-stimulation}b) was observed for this scale, with the \textbf{Light Cues} ($M = 2.63$, $SD = 0.60$) and \textbf{Text Cues} ($M = 2.58$, $SD = 0.29$) conditions receiving the highest ratings. Notably, all three conditions were rated as highly stimulating, including the \textbf{Inherent Cues} condition ($M = 2.13$, $SD = 0.69$).
+
+% For the Efficiency subscale, descriptive statistics show the Inherent Cues condition having the lowest rating (M = 1.38, SD = 1.23), followed by the Text Cues (M = 1.88, SD = 0.54). The Light Cues condition had the highest average (M = 2.35, SD = 0.67).
+
+% For the Stimulation subscale, the analysis reveals very similar averages across conditions. The lowest is the Inherent Cues condition (M = 2.13, SD = 0.69), followed by the Text Cues (M = 2.58, SD = 0.29). The highest was the Light Cues (M = 2.63, SD = 0.60).
+
+% Figure \ref{fig:ueq-stimulation} illustrates the averages for the Efficiency and Stimulation subscales of the UEQ.
+
+% \begin{figure} [h!]
+%     \centering
+%     \includegraphics[width=0.4\linewidth]{images/Results/UEQ Efficiency.png}
+%     %\caption{UEQ Efficiency}
+%     %\label{fig:ueq-efficiency}
+%     \includegraphics[width=0.4\linewidth]{images/Results/UEQ Stimulation.png}
+%     \caption{(a) UEQ Effiency (b) UEQ Stimulation}
+%     \label{fig:ueq-stimulation}
+% \end{figure}
+
+\begin{figure} [h!]
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Results/UEQ Efficiency.png}
+        \caption{ \gls{UEQ} Efficiency}
+         \label{fig:ueq-efficiency}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Results/UEQ Stimulation.png}
+         \caption{ \gls{UEQ} Stimulation}
+         \label{fig:ueq-stimulation}
+     \end{subfigure}
+        \caption{Non-significant trends of the \gls{UEQ}'s Efficiency and Stimulation subscales across conditions, with 95\% confidence intervals.}
+        \label{fig:ueq-efficiency-stimulation}
+\end{figure}
+
+\subsection{Questionnaire for the Subjective Consequences of Intuitive Use (\gls{QUESI})}
+The Questionnaire for the Subjective Consequences of Intuitive Use (\gls{QUESI}) was used to measure perceived intuitiveness. It assesses five subscales: Low Perceived Effort of Learning, High Familiarity, Low Subjective Mental Workload, High Perceived Achievement of Goals, and Low Perceived Error Rate. Items are scored on a 5-point Likert scale ranging from 1 (fully disagree) to 5 (fully agree).
+
+\subsubsection{Low Perceived Effort of Learning}
+A one-way \gls{ANOVA} revealed a significant difference between conditions in the perceived effort required to learn the interface, $F(2, 27) = 7.06$, $p = .003$.
+
+As shown in Fig. \ref{fig:quesi-effort-learning}, participants using the augmented feedforward conditions found the interface easier to learn. The \textbf{Light Cues} condition was rated as requiring the least effort ($M = 3.97$, $SD = 0.96$), followed by the \textbf{Text Cues} condition ($M = 3.63$, $SD = 0.74$). The \textbf{Inherent Cues} condition was perceived as requiring the most effort to learn ($M = 2.43$, $SD = 1.13$).
+
+% Descriptive statistics revealed that the Light Cues condition had the highest average scores out of all conditions ($M = 3.97$, $SD = 0.96$), followed by the Text Cues condition ($M = 3.63$, $SD = 0.74$). The Inherent Cues condition had the lowest average score ($M = 2.43$, $SD = 1.13$).
+
+% Figure \ref{fig:quesi-effort-learning} illustrates the differences across conditions.
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/Results/QUESI Low Effort of Learning.png}
+    \caption{\gls{QUESI} Low Perceived Effort of Learning differences across conditions, with 95\% confidence intervals.}
+    \label{fig:quesi-effort-learning}
+\end{figure}
+
+Post hoc tests with Holm’s correction revealed that the \textbf{Inherent Cues} condition required significantly more learning effort than both the \textbf{Light Cues} condition($Mdiff = -1.53$, $SE = 0.43$,$ t = -3.57$, $p = .004$) and the \textbf{Text Cues }condition ($Mdiff = -1.20$, $SE = 0.43$, $t = -2.80$,$ p = .019$). There were no significant differences between the perceived effort of learning the \textbf{Light Cues} and \textbf{Text Cues} ($p = .444$).
+
+\subsubsection{High Familiarity}
+The High Familiarity scale assesses whether the interface felt familiar based on prior knowledge. A one-way \gls{ANOVA} showed a significant difference in perceived familiarity between the conditions, $F(2, 27) = 4.78$, $p = .017$.
+% A one-way ANOVA revealed significant differences on how familiar the interface appeared to participants, $F(2, 27) = 4.78$, $p = .017$.
+
+As shown in Fig. \ref{fig:quesi-familiarity}, participants found the augmented feedforward conditions to be more familiar. The \textbf{Light Cues} $M = 3.80$, $SD = 0.85$) and \textbf{Text Cues} ($M = 3.73$, $SD = 0.58$) conditions received the highest familiarity ratings, with the \textbf{Inherent Cues} condition rated as less familiar ($M = 2.77$, $SD = 1.02$).
+
+% Descriptive statistics show that the Light Cues had the highest perceived familiarity on average across all conditions ($M = 3.80$, $SD = 0.85$), followed by the Text Cues ($M = 3.73$, $SD = 0.58$), and the Inherent Cues ($M = 2.77$, $SD = 1.02$).
+
+% Figure \ref{fig:quesi-familiarity} illustrates the differences in familiarity across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/Results/QUESI High Familiarity.png}
+    \caption{\gls{QUESI} High Familiarity differences across conditions, with 95\% confidence intervals.}
+    \label{fig:quesi-familiarity}
+\end{figure}
+
+Post hoc tests using Holm's correction revealed that the \textbf{Inherent Cues} were significantly perceived as the least familiar compared to the \textbf{Light Cues} ($Mdiff = -1.03$, $SE = 0.37$, $t = -2.76$, $p = .031$) and \textbf{Text Cues }($Mdiff = -0.97$, $SE = 0.37$, $t = -2.58$, $p = .031$). No significant differences were found between the \textbf{Light Cues} and \textbf{Text Cues} conditions ($p = .860$).
+
+\subsubsection{Low Subjective Mental Workload, High Perceived Achievement of Goals, and Low Perceived Error Rate}
+
+Finally, no statistically significant differences were found between the conditions for the three remaining \gls{QUESI} subscales. The descriptive trends for these scales, visualized in Fig. \ref{fig:quesi-others}, are detailed below.
+
+For \textbf{Low Subjective Mental Workload}, ratings were high across all groups (Inherent Cues: $M = 3.10$, $SD = 1.03$; Light Cues: $M = 3.60$, $SD = 1.00$; Text Cues: $M = 3.63$, $SD = 0.60$), with no significant difference found ($F(2, 27) = 1.10$, $p = .346$). A similar outcome was observed for \textbf{High Perceived Achievement of Goals}, where all groups reported feeling they could complete the tasks successfully (Inherent Cues:$ M = 4.07$, $SD = 0.62$; Light Cues: $M = 4.63$, $SD = 0.51$; Text Cues: $M = 4.53$, $SD = 0.45$); the difference here approached but did not reach statistical significance ($F(2, 27) = 3.23$, $p = .055$). Likewise, the differences for \textbf{Low Perceived Error Rate} were not statistically significant ($F (2, 27) = 2.16$, $p = .135$), although the descriptive data showed a trend where the Light Cues condition was perceived as having the lowest error rate ($M = 4.10$, $SD = 0.70$), followed by Text Cues ($M = 3.90$, $SD = 0.70$) and Inherent Cues ($M = 3.35$, $SD = 1.06$).
+
+% There were no significant differences on the subjective mental workload across all conditions, $F(2, 27) = 1.10$, $p = .346$. Descriptive statistics show very similar averages, with Text Cues being the highest ($M = 3.63$, $SD = 0.60$), followed by Light Cues ($M = 3.60$, $SD = 1.00$), and the Inherent Cues ($M = 3.10$, $SD = 1.03$).
+
+% The High Perceived Achievement of Goals subscale also revealed no significant differences across conditions, $F(2, 27) = 3.23$, $p = .055$. Descriptive statistics show similar average scores, with Light Cues being the highest ($M = 4.63$, $SD = 0.51$), followed by the Text Cues ($M = 4.53$, $SD = 0.45$) and the Inherent Cues ($M = 4.07$,$ SD = 0.62$).
+
+% Finally, the Low Perceived Error Rate subscale also showed no significant differences between conditions, $F (2, 27) = 2.16$, $p = .135$. Descriptive statistics show light Cues with the highest average scores across all conditions ($M = 4.10$, $SD = 0.70$), followed by Text Cues ($M = 3.90$, $SD = 0.70$), and Inherent Cues ($M = 3.35$, $SD = 1.06$).
+
+% Figure \ref{fig:quesi-others} illustrates the average scores of the mentioned subscales. 
+
+% \begin{figure} [h!]
+%     \centering
+%     \includegraphics[width=0.3\linewidth]{images/Results/QUESI Subjective Mental Workload.png}
+%     \includegraphics[width=0.3\linewidth]{images/Results/QUESI Perceived Achievement of Goals.png}
+%     \includegraphics[width=0.3\linewidth]{images/Results/QUESI Low Perceived Error Rate.png}
+%     \caption{(a) Low Subjective Mental Workload, (b) High Perceived Achievement of Goals, (c) Low Perceived Error Rate.}
+%     \label{fig:quesi-others}
+% \end{figure}
+
+\begin{figure} [h!]
+     \centering
+     \begin{subfigure}[t]{0.31\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Results/QUESI Subjective Mental Workload.png}
+         \caption{Low Subjective Mental Workload}
+         \label{fig:quesi-workload}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.31\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Results/QUESI Perceived Achievement of Goals.png}
+         \caption{High Perceived Achievement of Goals}
+         \label{fig:quesi-goals}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[t]{0.31\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Results/QUESI Low Perceived Error Rate.png}
+         \caption{Low Perceived Error Rate}
+         \label{fig:quesi-error}
+     \end{subfigure} 
+        \caption{Non-significant \gls{QUESI} subscale trends across conditions, with 95\% confidence intervals.}
+        \label{fig:quesi-others}
+\end{figure}
+
+\subsection{Modular Evaluation of Key Components of User Experience (\gls{meCUE})}
+Module III of the \gls{meCUE} questionnaire was used to measure participants' emotional responses to the interface. Positive Emotions and Negative Emotions were measured with a 7-point Likert scale, ranging from 1 (strongly disagree) to 7 (strongly agree).
+
+\subsubsection{Positive Emotions}
+A one-way \gls{ANOVA} revealed a significant effect of feedforward type on Positive Emotions, $F(2, 27) = 4.82$, $p = .016$.
+
+As shown in Fig. \ref{fig:meCUE-positive}, the descriptive statistics indicated that the \textbf{Light Cues} condition elicited the most positive emotions  ($M = 5.70$, $SD = 0.83$), followed by the \textbf{Text Cues} condition ($M = 5.50$, $SD = 0.67$). The \textbf{Inherent Cues} condition generated the fewest positive emotions ($M = 4.67$, $SD = 0.85$).
+
+% Figure \ref{fig:meCUE-positive} illustrates the averages across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{images/Results/meCUE Positive.png}
+    \caption{\gls{meCUE} Positive Emotions differences across conditions, with 95\% confidence intervals.}
+    \label{fig:meCUE-positive}
+\end{figure}
+
+Holm-corrected post hoc comparisons revealed that the emotional response was significantly more positive in the \textbf{Light Cues} condition compared to the \textbf{Inherent Cues} condition ($Mdiff = -1.03$, $SE = 0.35$, $t = -2.93$, $p = .021$). While the difference between the \textbf{Inherent Cues} and \textbf{Text Cues} conditions approached significance ($p = .051$), there was no significant difference found between the two augmented feedforward conditions ($p = .576$).
+ 
+% The comparison between Inherent and Text Cues approached significance ($Mdiff = -0.83$, $SE = 0.35$, $t = -2.36$, $p = .051$), while there was no significant difference between Light and Text Cues ($Mdiff = 0.20$, $SE = 0.35$, $t = 0.57$, $p = .576$).
+
+\subsubsection{Negative Emotions}
+Conversely, a second one-way \gls{ANOVA} also found a significant effect of the feedforward condition on Negative Emotions, $F(2, 27) = 6.26$, $p = .006$.
+
+The descriptive data, shown in Fig. \ref{fig:meCUE-negative}, reveals an inverse pattern to the positive emotions.  The \textbf{Inherent Cues} condition elicited the highest level of negative emotions ($M = 2.37$, $SD = 0.82$). Both augmented feedforward conditions resulted in significantly fewer negative emotions, with the \textbf{Light Cues} condition scoring the lowest ($M = 1.38$, $SD = 0.40$), followed by the \textbf{Text Cues} condition($M = 1.68$, $SD = 0.62$).
+
+% Descriptive statistics showed that participants in the Inherent Cues condition reported the highest negative emotion scores ($M = 2.37$, $SD = 0.82$), followed by the Text Cues condition ($M = 1.68$, $SD = 0.62$), and the Light Cues condition ($M = 1.38$, $SD = 0.40$).
+
+% Figure \ref{fig:meCUE-negative} shows the average negative emotion scores across conditions.
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.65\linewidth]{images/Results/meCUE Negative.png}
+    \caption{\gls{meCUE} Negative Emotions differences across conditions, with 95\% confidence intervals.}
+    \label{fig:meCUE-negative}
+\end{figure}
+
+Holm-corrected post hoc tests confirmed that participants in the \textbf{Inherent Cues} condition reported significantly more negative emotions than those in both the \textbf{Light Cues} condition  ($Mdiff = 0.98$, $SE = 0.28$, $t = 3.45$, $p = .006$) and the \textbf{Text Cues} condition  ($Mdiff = 0.68$, $SE = 0.28$, $t = 2.40$, $p = .047$). No significant difference was found between the two augmented feedforward conditions  ($p = .302$).
+
+\subsection{Qualitative Results}
+
+The qualitative data from the semi-structured interviews and observational notes was analyzed using an \textbf{affinity diagramming} \cite{krause_affinity_2024} approach to synthesize the findings. Key statements and observations from each participant were extracted onto virtual sticky notes, noting which feedforward condition they pertained to. These notes were then iteratively grouped into clusters based on similarity, allowing distinct, overarching themes to emerge from the data. The following sections detail the key themes identified through this process. Participant statements are referenced with their ID number and assigned condition, abbreviated as (IC) for Inherent Cues, (LC) for Light Cues, and (TC) for Text Cues.
+
+\subsubsection{First Impressions} % alternative title: Initial Reactions to a Novel and Engaging Experience 
+Across all three feedforward conditions, the participants' initial reactions to the interactive textile prototype were largely positive, with a dominant theme being the sense of \textbf{novelty and innovation}. Participants frequently described the experience as "very novel" (P28, LC) and "just something completely different" (P26, TC), with one stating, "I've never seen anything like it" (P15, IC) . For many, this was their first encounter with such an interface. As P17 (TC) explained, "it was the first time interacting with textile surfaces, so it was completely new". This was echoed by another participant who noted, "it's just a completely new system for me, I haven't operated anything like this before" (P23, TC). This novelty was often framed in a futuristic context, with one participant describing the interface as "very modern, very futuristic, a bit like 'back to the future'" (P21, LC). The dynamic, shape-shifting nature of the prototype was a particular source of positive surprise, with one participant finding it "refreshing" and a "nice addition" (P30, IC). 
+
+This sense of novelty was closely linked to feelings of \textbf{fun, playfulness, and excitement}. Participants consistently reported that the interaction was "fun and exciting" (P01, IC), and that they "really had fun with it" (P16, LC). This enjoyment was often tied to the unconventional and engaging interaction models. For example, one participant "enjoyed the music player that felt like it was intentionally made fun instead of having a lot of menus like today on touchscreens" (P01, IC). This sentiment was echoed by another participant who highlighted t the interactions felt like "a kind of game or activity" that they "really enjoyed" (P27, TC). 
+
+Finally, participants commented positively on the overall \textbf{aesthetic and sensory experience}, often drawing favorable comparisons to conventional interfaces. The interface was described as "completely calming, it's really relaxed" (P15, IC) and "pretty soothing" (P25, IC), with the textile medium itself being a significant advantage. One participant found it "pleasant to have something so haptic" (P22, TC), while another noted that textile interfaces have the potential to feel "quite luxury and more integrated into the vehicle" (P06, LC). This sense of seamless integration was a recurring point, with participants finding it "more exciting than a touch display" (P14, IC) and noting that it was "blending in [...] pretty well" (P25, IC) without being distracting. This positive perception extended to the interaction model itself; one user felt their "gestures were unified with the [graphical] interface" (P11, IC), while another found the "navigation was pretty fast and also intuitive" because they "could interact with similar gestures that we use everyday" (P25, IC). Overall, the experience was summarized as "really good" (P15, IC), "comfortable and enjoyable" (P29, LC), and "simple but effective" (P27, TC).
+
+
+
+\subsubsection{Learning Curve} % alternative title: A Steep but Rapidly Flattening Learning Curve 
+
+A second major theme that emerged across all three conditions was the participants' experience of a steep initial learning curve that quickly flattened out. Participants ($n = 22$) consistently described the beginning of the interaction as challenging, followed by a rapid progression to confidence and competence.
+
+This \textbf{initial difficulty was articulated by participants in all groups} ($n = 8$). One user in the Inherent Cues condition described the start as "very hard for me in the beginning" (P04, IC), while another admitted, "at the beginning I was frustrated because I didn't know which handles I had" (P11, IC). This sentiment was echoed in the Text Cues condition, with participants finding it "a bit confusing" (P12, TC) and noting that "the first steps were a bit difficult" (P23, TC). This initial hurdle was attributed to the complete novelty of the interface, as participants had "no experience at all" (P18, IC) and "at first [...] didn't know how to operate" (P18, IC) such a system.
+
+Despite this steep start, \textbf{participants universally reported that they overcame the initial challenge very quickly} (n = 11). After the initial phase, users in the Inherent Cues group found that "it went smoothly" (P04, IC) and that "once I knew what I had to do, it felt logical and good" (P18, IC). This rapid progression was also noted in the Light Cues condition, where one participant described a "big development, because the first one or two minutes were more like an experience phase [...] after I understood the basic concept it felt quite easy to use" (P09, LC). Similarly, in the Text Cues group, participants felt that "as soon as you try out some interactions you get a hang of it very quickly" (P12, TC) and "once you have made the right interaction it is actually clear what you have to do” (P20, TC), with one user pinpointing the moment of understanding: "after the second [scenario] I got how the system is really working" (P27, TC). For one participant, this process of discovery was a highlight, stating that one of her favorite aspects was "the learning curve of it and figuring out the controls" (P24, IC).
+
+The \textbf{augmented cues appeared to influence the perception of this learning process}. Participants in the Inherent Cues condition often compared the learning experience to memorizing a physical device, like "a remote of a TV or a controller of a console" (P04, IC), suggesting a process of deliberate memorization was required. In contrast, participants in the Light Cues condition, while still acknowledging a familiarization phase, described the process as feeling "quite intuitive" (P06, LC) from the start. The learning was often seamless, as one participant noted: "the learning effect was already very high, but [...] that I had to interact with the [dial by turning] was clear from the beginning" (P16, LC).
+
+Ultimately, participants felt that the \textbf{learning curve was manageable and appropriate for a novel product}. One user explained that while a learning curve is unavoidable with new things, "the fact that I still understood it within, I don't know, 10 minutes, in the sense that I now feel confident to use it myself, I would say that's also ok" (P28, LC). The physical and haptic nature of the interface was cited as an aid to this process, with one participant in the Text Cues condition noting that "this haptic feeling makes it easier to memorize which function is underlying" (P19, TC).
+
+ 
+\subsubsection{User Strategies for Learning the Interface}
+Across all conditions, participants articulated and demonstrated several distinct strategies for learning how to interact with the prototype. The most common approaches were visual mapping from the screen to the textile surface, leveraging prior experience from other devices, and, when necessary, systematic trial and error.
+
+The foundational strategy that many participants mentioned was \textbf{visual mapping} ($n = 11$). Users consistently described a process of first analyzing the \gls{WSD} \gls{GUI}, then looking down to the armrest to locate the corresponding physical elements, and then attempting to "transfer" or "combine" the two (P14, IC; P18, IC). As P15 (IC) explained, "I first looked at how the interface looks on the screen and compared how this [textile surface] looks, whether the shapes are anything similar". This mental projection was strongly supported by the augmented cues. Participants in the Light Cues condition described how they would "first look at the screen to see where I might find the element I needed [...] and then I always looked down briefly to see if there was [something projected, such as] an arrow" (P20, LC). The color-mapping of the lights was particularly effective in this regard, with P21 (LC) stating, "I used the screen to find out what I wanted to do and then this light indication down there to find out what to do." In the Text Cues condition, a clear hierarchy of information processing was observed. Even when text was available, participants prioritized other visual information first. P17 (TC) articulated this sequence: "a lot of it was visual at first, so I first looked at what the screen was suggesting to me, then I read what it actually said [...] and then I checked what was to be seen on [the textile surface]". This suggests that the animated and graphical cues on the \gls{WSD} were more salient than the text, which was often treated as a secondary source of clarification.
+
+% When visual mapping alone was not enough, participants fell back on leveraging \textbf{prior experience} with other interfaces ($n = 3$). One user explained her process: “I use my tablet and phone a lot. so I tried the same gestures I would use on my phone [...] and it worked” (P12, TC). This reliance on established mental models was often subconscious, as P15 (IC) described: "I also compared interactions with other devices and apps [...] and acted accordingly, so my subconscious told me what was right based on experience". 
+
+When visual mapping was insufficient, participants reported to frequently fall back on leveraging \textbf{prior experience} and mental models from touchscreen devices ($n = 8$) and other interfaces ($n = 4$). This was a conscious strategy for some, with one participant explaining, “I use my tablet and phone a lot, so I tried the same gestures I would use on my phone [...] and it worked” (P12, TC). Another found the gestures "pretty common to what I do on a touchscreen, so that feels quite natural” (P09, LC). This reliance on established mental models was often subconscious, as P15 (IC) described: "I also compared interactions with other devices and apps [...] and acted accordingly, so my subconscious told me what was right based on experience", with another user noting their actions were "probably derived from the cell phone [...] rather subconsciously" (P22, TC). This use of familiar patterns made the novel interface feel accessible, with one participant explaining it was "like playing a new game; you already know the buttons because you have the habit of using your cell phone [...] and you are just trying a new structure and putting these buttons together for new actions" (P10, LC). Conversely, this theme also explains why some interactions, like "pulling [the loop]", were so difficult, as they were not "already part of a mental model" from existing devices (P15, IC).
+
+% Some participants attempted to rely on this prior experience combined with the tactile properties to use the interface "blindly", looking only at the WSD. As P09 (LC) noted, “I tried to first use it blindly and just look at the screen ahead [...] but when I figured out that something did not do what I wanted to do then I had a glance at the [textile] interface, and then it was easy to figure out what I had to do.”
+
+When a clear path forward was not apparent from visual mapping or prior experience, participants engaged in \textbf{systematic trial and error} (n = 5). This was a conscious strategy, with one user explaining that since "every task somehow had a new gesture in it, it was always a bit of rethinking 'what haven't I tried yet, what else could it be'" (P28, LC). This approach was described as "just trying and seeing what happens, what feedback the system gives me” (P28, LC), highlighting the crucial role of feedback in this learning process. In some cases, this was the primary strategy from the beginning, such as when dealing with a completely new element: "with the first task, it was 'just press it and see what happens'" (P28, LC). This strategy was also supported by the participants' attitudes and the perceived forgiving nature of the system. Several users described an exploratory mindset, stating, "I am a person who simply tries” (P26, TC). This was encouraged by the feeling that "nothing could go wrong" (P05, TC), with one participant explaining their strategy: "if I click on something wrong I can always go back [...] I just do something that I think works and if it doesn't work then I just try to go back" (P21, LC).
+
+
+
+\subsubsection{Perceptions of Augmented Light Cues}
+
+The augmented light cues were perceived by the vast majority of participants in their condition ($n = 8$) as a highly effective and supportive layer of guidance that made the interaction feel "quite intuitive” (P06, LC) . Participants frequently described the lights as "very supportive" (P21, LC) and "very helpful" (P20, LC; P21, LC; P28, LC), with one user stating that "it was actually all so well presented that I didn't really think much about what I had to do" (P16, LC).
+
+A key strength of the light cues was their role in \textbf{clarifying affordances}, particularly for novel or complex interactions. Participants noted that the lights were essential for understanding certain gestures. As P07 (LC) explained, they were crucial to understand some interactions such as the loop. This was especially true for discovering interactions that were not immediately obvious from the inherent cues alone. One user admitted that without the light cues, the metaphor of spinning the vinyl would be difficult to discover and that for the more "unconventional interactions, I would have needed a few more tries” (P06, LC). The animated nature of the cues was particularly effective at communicating directionality, with P20 (LC) stating they "helped a lot, especially at the beginning simply because I didn't know which direction to swipe in".
+
+The lights also played a critical role in \textbf{drawing attention and aiding discoverability}, especially for peripheral elements. P21 (LC) articulated this well, noting that while the central controls were easy to see, the elements at the top (volume slider and loop) were also visible due to the color contrast, but the light was "very supportive" in making them noticeable. This ability to guide the user's focus efficiently was a recurring theme. Even when a participant initially tried to interact "blindly" by only looking at the \gls{WSD}, they found that with a quick glance down at the armrest, "it was easy to figure out what I had to do” (P09, LC) because of the light cues.
+
+Furthermore, participants highlighted the \textbf{function-revealing capability} of the light cues through color mapping. One user described how the "colors and such are reflected" from the screen to the textile surface (P16, LC), while another explained their strategy: "I always looked at the screen first, and there you had different colors and then the colors were displayed down here again, so I used the screen to find out what I wanted to do and then this light indication down there to find out what to do. So the intuitive operation came more from the light indication." (P21, LC).
+
+However, the feedback was \textbf{not universally positive}. One participant (P13, LC) perceived the lights "rather negatively" and "irritating", stating a preference for "\gls{GUI} help with tooltips or animations". Another participant noted a technical limitation of the prototype, observing that the "light was hard to see in this area [of the volume slider] compared to the central area", which may have impacted its effectiveness. 
+% This suggests that for some users, augmented reality-style projections may be less desirable than conventional on-screen guidance, and their implementation must ensure consistent visibility. .
+
+
+\subsubsection{Perceptions of Augmented Text Cues}
+
+The augmented text cues were \textbf{generally perceived as helpful} ($n = 7$), particularly for first-time users, though their implementation created significant usability issues. Initially, \textbf{several participants did not notice the text hints} ($n=5$), attempting to interact on their own before discovering the instructions (P05, TC). However, once discovered, the cues were described as "helpful" (P05, TC; P12, TC; P19, TC; P17, TC; P22, TC; P26, TC)  "informative" (P12, TC) and "pretty good" (P23, TC). One participant explained their value in resolving ambiguity: "the visual animations [on the \gls{WSD}] already indicate a bit what you have to do, but sometimes it is helpful to see exactly what you have to do, e.g. this swiping inwards instead of outwards" (P17, TC).
+
+The cues were seen as \textbf{particularly useful during the initial learning phase}. As P17 (TC) explained, they were "particularly helpful at the beginning", functioning "similar to the instructions on the phone for gesture controls that you see once and then you learned it". This suggests their primary value is as a scaffolding tool for novice users. The feeling of support was summarized by P26 (TC): "when I intuitively knew what I had to do, I didn't look there [...], and when I didn't know how to do it, I looked for hints [...], and that's when the text hints came in handy".
+
+Despite this general helpfulness, a major \textbf{recurring complaint was the timed interval system} used in complex scenarios. Participants found it frustrating to have to wait for the correct hint to reappear, with one user stating, "what I always find a bit annoying is when they cycle through like that and then you have to wait until it comes back again” (P23, TC). This led to a desire for more user control, with the same participant suggesting he would "want to switch it off in the long run once I've learned it." While some participants felt the cues were sufficient, others expressed a desire for even more guidance in certain situations, such as for the loop (P22, TC) or the volume slider (P05, TC).
+
+\subsubsection{Mixed Reactions to the Onboarding-Free Experience}
+ 
+The study's deliberate omission of a tutorial or onboarding process to test its "walk-up-and-use" nature elicited strong and mixed reactions. While a clear majority of participants ($n = 18$) ultimately expressed a preference for discovering the interface on their own, a notable minority ($n = 8$) stated they would have preferred or needed some form of initial instruction. A key finding was that \textbf{the desire for an onboarding was entirely concentrated within the Inherent Cues} ($n = 6$) \textbf{and Text Cues} ($n = 3$) \textbf{conditions}. No participant in the Light Cues condition expressed a need for an initial tutorial.
+
+\paragraph{Preference for Exploratory, "Onboarding-Free" Learning}
+% Most participants across all groups framed the lack of a tutorial in a positive light, describing the process of discovery as a "fun element" (P12, TC). Many expressed a general dislike for tutorials, with one user stating, "I'm more of an introduction-tutorial-skipper, so I think it's actually quite good to just try it out" (P22, TC), a sentiment echoed by others who find onboardings "annoying" (P06, LC; P19, TC). The experience was often likened to "a kind of game or activity" (P27, TC).
+% The participants who preferred the exploratory approach often expressed an active dislike for traditional tutorials. Many generally identified themselves as a "tutorial-skipper" (P22, TC), with one stating, "an onboarding always tends to annoy me" (P19, TC), and another explaining, "I think it would have frustrated me more to go through a whole onboarding process [...] I always skip it because it tends to upset me" (P16, LC). Instead of being frustrating, the experience of learning on their own was described as a "fun element" (P12, TC) and "like a kind of game or activity" (P27, TC).
+
+The participants who preferred the exploratory approach often expressed an \textbf{active dislike for traditional tutorials} ($n = 7$). Some generally identified themselves as a "tutorial-skipper", (P22, TC) with P19 (TC) stating, "an onboarding always tends to annoy me". Another participant explained, "I think it would have frustrated me more to go through a whole onboarding process [...], I always skip it because it tends to upset me" (P16, LC), while another simply said, "I actually like discovering things myself, as opposed to following something like a video tutorial" (P13, LC). Instead of being frustrating, the experience of learning on their own was described as a "fun element" (P12, TC). As P20 (LC) explained, "it was absolutely not frustrating because it was relatively fast to find out how it works” and found it "exciting to discover" the novel interface on their own.
+
+% This preference for exploration was strongly linked to the autonomous vehicle context. As P30 (IC) explained, "it wasn’t frustrating at all, because there wasn’t a safety element attached to it... If that had been the case then my mental model would have been different, frustration might have been definitely there". Another participant felt that when you learn by doing, "you are getting more involved [...] with the technology [...] that keeps the engagement with the system for longer" (P30, IC).
+This \textbf{enjoyment was strongly linked to the novelty of the interface and the autonomous vehicle context}. One participant found it "extremely exciting" and "had a lot of fun [...] just trying it out myself" precisely because it was a new technology (P21, LC). As P30 (IC) explained in detail, the lack of perceived risk in the context of autonomous vehicles was a critical factor: “It wasn’t frustrating at all, because there wasn’t a safety element attached to it. I knew that probably I wouldn’t be able to do anything here [...] that could have affected my safety in the vehicle. If that had been the case then my mental model would have been different; frustration might have been definitely there or hesitance to interact.” This participant further argued that learning by doing in this safe context establishes a "more personal relationship" with the technology, which "keeps the engagement with the system for longer, probably across the whole lifetime" as opposed to a system with an introductory onboarding.
+
+\paragraph{Desire for a Tutorial or Initial Guidance}
+In contrast, a significant portion of participants in the \textbf{Inherent Cues} and \textbf{Text Cues} conditions \textbf{found the onboarding-free experience to be challenging and, at times, frustrating}. 
+
+The most negative feedback came from the Inherent Cues group, where one user stated that "the missing onboarding" was the most negative thing about the system (P18, IC), and another felt that "when you sit in the car for the first time you definitely need a tutorial" (P15, IC). This lack of introducing instructions was also found to influence the user experience, with P11 (IC) stating, "I think I would have found onboarding much more pleasant" (P11, IC).
+
+% Participants in the \textbf{Text Cues} condition also expressed a need for more initial support. One user found the experience "rather frustrating" and stated, "I always find onboardings important and useful” (P23, TC). Others suggested a compromise, such as a hint after idle time or error inputs (P02, TC; P03, TC), indicating a need for more proactive guidance when the user is clearly stuck.
+% For one participant, this frustration was directly linked to the context of being in a vehicle. P15 (IC) provided a detailed explanation for why the lack of a tutorial felt particularly unsettling in an autonomous car: "in the context of a car I don't think [onboarding-free is] good, because [...] autonomous driving makes you a bit scared, because you have a bit of a feeling that you can't intervene and don't really have control and then to be thrown into a system that you don't know how to use [...] is a bit scary, so a tutorial would be important in this scenario". 
+
+Participants in the Text Cues condition also expressed a need for more initial support. One user found the experience "rather frustrating" and stated, "I always find onboardings important and useful. In the end, it worked out this way, but a little onboarding would have been good anyway” (P23, TC). Others suggested a compromise, such as a hint after idle time or error inputs (P02, TC; P03, TC), indicating a need for more proactive guidance when the user is clearly stuck.
+
+For one participant, this frustration was directly linked to the context of being in a vehicle. P15 (IC) provided a detailed explanation for why the lack of a tutorial felt particularly unsettling in an autonomous car: "in the context of a car I don't think [onboarding-free is] good, because [...] autonomous driving makes you a bit scared, because you have a bit of a feeling that you can't intervene and don't really have control, and then to be thrown into a system that you don't know how to use [...] is a bit scary, so a tutorial would be important in this scenario". 
+
+Interestingly, P24 (IC) expressed a conflicted view that captured the dual nature of the challenge. She listed "to figure out what exactly is where [...] and how the controls work" as a negative standout that could be resolved with an onboarding, yet also named "the learning curve of it and figuring out the controls" as one of her favorite aspects, highlighting that the challenge of discovery can be both a point of frustration and a source of satisfaction.
+
+\subsubsection{User Wishes for Additional Guidance and Cues}
+
+Following the challenges experienced during the onboarding-free interaction, many participants expressed a clear desire for more or different types of guidance. A key finding was that these \textbf{requests were almost entirely concentrated within the} \textbf{Inherent Cues} ($n = 5$) \textbf{and} \textbf{Text Cues} ($n = 5$) \textbf{conditions}; only one participant in the Light Cues condition expressed a wish for a different cue.
+
+Participants in the Inherent Cues condition, often suggested \textbf{concepts that mirrored the other experimental conditions}. For instance, P30 (IC) noted that "visual aspects on the textile itself would also be great", and another participant independently proposed, “I could imagine a light [on the textile]” or a "speech bubble that explains in concrete terms" (P01, IC), effectively describing the Light and Text Cues conditions. 
+
+A recurring wish across both the Inherent Cues and Text Cues groups was for \textbf{more symbolic or semantic information directly on the textile surface} itself. Participants felt that the interface was difficult to understand at a glance "because there are no labels or anything" (P19, TC). Several users suggested that adding simple icons would have been helpful. P15 (IC) stated, "I am missing some icons", suggesting that for the volume slider, "something like a plus or minus icon would have made it more clear", and for the loop, "a home icon" might have prevented the initial confusion. This sentiment was echoed by others who felt that with "labels on the control panel [...] it would be a bit easier" (P27, TC).
+
+Beyond the textile surface, some participants wished for \textbf{more guidance from the \gls{GUI}}. One user from the Inherent Cues group suggested that the system could be improved with "some visual indicators" similar to the one on the Welcome Screen with the pulsing button (P18, IC), while another would have liked to have the textile interface "mirrored even more clearly on the \gls{WSD}" with a one to one representation of the elements together with descriptive icons (P15, IC). Interestingly, the desire for more \gls{GUI}-based help also came from a participant in the Light Cues condition, who, despite the on-surface projections, "would have liked a tooltip" on the \gls{WSD} to understand the more complex spinning metaphor in the music player (P13, LC).
+
+
+
+\subsubsection{Critical Usability Failures}
+
+The study identified two elements, the \textbf{Loop and the Volume Slider}, as the most significant usability failures. The issues stemmed not from flaws in the elements themselves, but from a combination of introducing an unfamiliar interaction paradigm and a fundamental perceptual disconnect that severely hindered their discoverability.
+
+\paragraph{The Challenge of an Unfamiliar 'Pull' Gesture}
+
+The \textbf{novel "pull" gesture for the loop}, in particular, highlighted the significant challenges of introducing a novel interaction. A primary issue was the \textbf{clash with established mental models} creating learning difficulties. Participants expressed that they simply "don’t expect something like that" in a car, and would instead anticipate "something touchable, something flat” (P10, LC). This unfamiliarity led to significant confusion, with one user, who required help from the study conductor, stating, "I didn't get that at all, I wouldn't have figured it out on my own” (P22, TC). Another participant articulated this friction clearly: “This is an interaction I don’t know; pulling on something to go somewhere. It feels like an interesting interaction modality, because it's novel, but I would get tired of it very quickly” (P02, IC). The physicality of the interaction also created a unique problem within the study context: a \textbf{hesitation to apply force to a research prototype}. Unsure of the prototype's sturdiness, some participants expressed a fear of breaking something , with one user hesitating; "Do I pull? Do I break something?” (P24, IC), while another admitted, "I think I had a bit of respect for pulling the cord" (P26, TC).
+
+\paragraph{The Core Failure: Perceptual Disconnect and Poor Discoverability}
+
+The most fundamental failure for both the \textbf{Loop and the Volume Slider} was a shared perceptual disconnect: a large body of participants ($n = 14$) initially did not categorize these static, peripheral elements as being part of the interactive system. They were \textbf{frequently mistaken for decorative or structural components}, creating a significant barrier to their discovery and use. This confusion was articulated by numerous participants. One user said about the loop, "I first thought it wasn’t part of [the interface]” and “I thought the purpose of the loop is to store the prototype away” (P17, TC), while another "didn’t know if it was part of the structure to hold [the fabric down]" (P30, IC). The volume slider elicited a similar reaction, with a participant explaining, "I saw it at the top, but I didn't know if it was part of [the interface], I thought it was somehow an attachment" (P16, LC) and another stating "I thought it was to hold the prototype together" (P15, IC). This led to a general uncertainty about the interface's boundaries, with P14 (IC) asking, “what are only design elements and what are not?”
+
+Participants offered several reasons for this perceptual grouping error. A primary cause was the \textbf{intense visual focus on the central, dynamic shape-shifting hub of the interface}. As P19 (TC) explained, “you don't really have an eye on it at the top because you think you have to interact here [in the middle]”, and that the upper area "wasn't really in my focus". Another key reason was the \textbf{lack of representation on the \gls{WSD}} compared to other interactive elements on the armrest that are reflected in the \gls{GUI}. As P14 (IC) noted, "at first I didn't know whether the string or this volume control is a design or an interaction element at all, because it doesn't appear here [on the \gls{WSD}]".
+Ultimately, these two elements were perceived as a "slight \textbf{different concept}" (P30, IC) \textbf{from the rest of the interface} that consisted of shape-shifting elements with the base fabric. P30 (IC) explained, "for me the mental model was that this is the main interaction area [in the middle, while] this [volume slider area] is kind of off limits". This participant felt the slider's different texture and location did not make sense and was a "very different concept compared to the rest". This led to suggestions that the volume control should be "integrated more in the center" (P03, TC). This meant that even during exploratory trial-and-error, they were often the last things users tried. As P30 (IC) explained their strategy: "I first tried everything I could think of within this textural design concept [in the center] and then after I had sorted out all of the options I thought ‘okay let me see here’".
+
+\paragraph{Post-Discovery Experience: A Nuanced and Mixed Reception}
+
+Once the elements were finally discovered, the feedback revealed a more nuanced picture. The \textbf{volume slider} was largely \textbf{praised for its tactile qualities and clear affordances} ($n = 10$). Participants described its "fluffy" texture as feeling "great" (P17, TC) and "nice" (P06, LC; P13, LC). Once found, users felt it was a "very nice" interaction because it felt easy to set a value "from 1 to 100" (P19, TC), with the segments successfully fitting into their "mental model" of an incremental control (P22, TC). The tactile nature was seen as a key advantage, with one participant noting it would be easy to use blindly because the increments provide haptic feedback, in contrast to simple buttons (P25, IC).
+
+The \textbf{loop}, however, \textbf{continued to receive divided feedback}. While some participants ($n = 4$) found it to be a "funny gimmick" (P23, TC) that "increased the fun factor" (P14, IC) once learned, others remained unconvinced ($n = 4$). This division was clearly illustrated in discussions about its potential for eyes-free use. One participant praised this aspect, highlighting that without glancing down “you can roam around [with your hand] and find the string and pull it back and go home” (P27, TC). In direct contrast, another user found it to be the one element that could not be used "without looking", explaining that the "effort requires hand to eye coordination” (P30, IC). Despite the initial friction, a common sentiment was that the novel interaction eventually clicked for the user. This journey from confusion to understanding was best summarized by P20 (LC): “the thing I struggled with the most was how to get back to the main menu with the pulling, I think that was [...] the most unclear to me, but it actually makes a lot of sense once you've done it.”
+
+\begin{comment}
+    
+% The novel "pull" gesture for the loop received mixed and critical feedback, highlighting the significant challenges of introducing an unfamiliar interaction paradigm. While some participants ($n = 4$) found it to be a "funny gimmick" (P23, TC) that "increased the fun factor" (P14, IC), others found it confusing and unintuitive ($n = 4$).
+
+% A primary issue was the \textbf{clash with established mental models} creating learning difficulties. Participants expressed that they simply "don’t expect something like that" in a car, and would instead anticipate "something touchable, something flat” (P10, LC). This unfamiliarity led to significant confusion, with one user, who required help from the study conductor, stating, "I didn't get that at all, I wouldn't have figured it out on my own” (P22, TC). Another participant articulated this friction clearly: “This is an interaction I don’t know; pulling on something to go somewhere. It feels like an interesting interaction modality, because it's novel, but I would get tired of it very quickly” (P2, IC). he physicality of the interaction also created a unique problem within the study context: a \textbf{hesitation to apply force to a research prototype}. Unsure of the prototype's sturdiness, some participants expressed a fear of breaking something , with one user hesitating; "Do I pull? Do I break something?” (P24, IC), while another admitted, "I think I had a bit of respect for pulling the cord" (P26, TC).
+
+% However, not all feedback was negative. Several participants found the interaction intuitive once learned, with one stating, "going back like this is kind of intuitive" (P19, TC). Another user highlighted its potential for eyes-free use: “when you are driving and are looking around you can roam around and find the string and pull it back and go home. Home access should be as easy as possible” (P27, TC). In direct contrast, another participant found it to be the one element that \textit{could not} be used "without looking", and explaining that the "effort requires hand to eye coordination” (P30, IC)
+
+% Ultimately, the feedback was best summarized by the participants who described a journey from confusion to understanding. As P20 (LC) explained, “the thing I struggled with the most was how to get back to the main menu with the pulling, I think that was [...] the most unclear to me, but it actually makes a lot of sense once you've done it.” 
+
+%This highlights that while the novel interaction was not immediately discoverable for many, it had the potential to become a logical and even enjoyable feature after the initial learning hurdle was overcome.
+
+ 
+% Similarly, feedback on the static volume slider was split: while the element itself was praised for its tactile feel and intuitive design once discovered ($n = 10$), its peripheral location and conceptual disconnect from the main interface created significant initial discoverability challenges.
+
+% The positive feedback focused on the slider's \textbf{successful haptic qualities and clear affordances}. Participants described its "fluffy" texture as feeling "great" (P17, TC) and "nice" (P06, LC; P13, LC). Once found, users felt it was a "very nice" interaction because it felt easy to set a value "from 1 to 100" (P19, TC), with the segments successfully fitting into their "mental model" of an incremental control (P22, TC). The tactile nature was seen as a key advantage, with one participant noting it would be easy to use blindly because the increments provide haptic feedback, in contrast to simple buttons (P25, IC).
+
+% However, these positive aspects were largely overshadowed by \textbf{negative feedback related to its discoverability and placement}. The core issue was that users did not expect an interactive element in that location. As P30 (IC) explained, "for me the mental model was that this is the main interaction area [in the middle, while] this [volume slider area] is kind of off limits". This participant felt the slider's different texture and location did not make sense and was a "very different concept compared to the rest". This led to suggestions that the volume control should be "integrated more in the center" (P03, TC).
+
+% This difficulty in assigning a function to the element was a recurring theme. One user stated, "I couldn't assign the element up here at first, I wasn't quite aware that it stood for volume" (P23, TC), while another only found it by a process of elimination after trying all other controls (P26, TC). 
+% Even for those who did notice it, its purpose wasn't always clear, with one participant admitting, "I didn't notice them in the beginning", and another suggesting a "plus or minus icon would have made it more clear" (P15, IC).
+
+ 
+
+% A core reason for the failure of both the Loop and the Volume Slider was a fundamental perceptual disconnect; a majority of participants initially did not even categorize these elements as being part of the interactive system. They were frequently mistaken for decorative or structural components for the prototype, creating a significant barrier to interaction.
+
+% This confusion was articulated by numerous participants. One user said of the loop, "I first thought it wasn’t part of [the interface]” (P17, TC), while another "didn’t know if it was part of the structure to hold [the fabric down]"  (P30, IC). The volume slider elicited a similar reaction, with a participant explaining, "I saw it at the top, but I didn't know if it was part of [the interface], I thought it was somehow an attachment" (P16, LC). This led to a general uncertainty about the interface's boundaries, with P14 (IC) asking, “what are only design elements and what are not?”
+
+% Participants offered several reasons for this perceptual grouping error. A primary cause was the intense visual focus on the central, dynamic hub of the interface. As P19 (TC) explained, “you don't really have an eye on it at the top because you think you have to interact here [in the middle]”, and that the upper area "wasn't really in my focus". Another key reason was the lack of representation on the WSD compared to other interactive elements that are reflected in the GUI and the textile interface. As P14 (IC) noted, "at first I didn't know whether the string or this volume control is a design or an interaction element at all, because it doesn't appear here [on the WSD]".
+
+% Ultimately, these two elements were perceived as a "slight different concept" (P30, IC) from the rest of the interface that consisted of shape-shifting elements with the base fabric. This meant that even during exploratory trial-and-error, they were often the last things users tried. As P30 (IC) explained their strategy: "I first tried everything I could think of within this textural design concept and then after I had sorted out all of the options I thought ‘okay let me see here’". This demonstrates that the static, peripheral controls were not just overlooked, but were mentally segregated from the primary interactive area, posing a significant and fundamental usability challenge.
+\end{comment}
+
+ 
+\subsubsection{The "Marble" Metaphor: A Conflict Between Design and Intuition}
+A significant and recurring usability issue was observed with the "marble" metaphor, first introduced in the \hyperref[ws2-destination-selection]{Destination Selection} task of the Welcome Scenario. While participants were eventually able to learn the interaction and apply it through various scenarios, their initial attempts consistently revealed a \textbf{strong conflict between the designed "swipe-inwards-to-select" gesture and their own intuitive mental models}, which were heavily influenced by their experience with other interfaces.
+
+The most common initial instinct, as detailed in section \ref{sec:failure-reates}, when faced with only inherent cues, was to tap the desired option (P01, IC; P30, IC). One participant explained that since tapping was used to start the car, they expected it to be the confirm action for this task as well (P01, IC).
+For those who did attempt a swipe, the vast majority intuitively swiped outward (see section \ref{sec:failure-reates}), toward the target element, rather than inward toward the central selection area. Some participants ($n=5$) articulated this intuitive desire across all feedforward conditions. They explained this was because "you know it more from interfaces [...] that you have to swipe outwards" (P19, TC) or that "if I select something in other applications I would go [toward] the [option]" (P26, TC). This led to initial confusion, with one user stating "swiping inwards went against my first intuition of swiping towards the element” (P13, LC).
+% This led to initial confusion, with one user stating, "my mental model was, that I would go to them, and then it turned out to be this kind of swiping inwards" (P18, IC).
+
+The \textbf{physical design of the pleated areas received mixed feedback} in this context. While some participants noted that the "grooved inwards" direction of the pleats "visually showed a bit that you actually have to swipe inwards" (P19, TC), others found them ambiguous. As P26 (TC) explained, "I think this looks a bit like arrows, I think it helps, but it also confused me a bit as to which way I'm going." For one participant, the directional friction of the pleats was a key cue: "The waves feel more smooth when you go from this direction [outward] and here [inward] you have much more friction. It just felt right to go with the [...] 'waves'” (P24, IC), suggesting a haptic rather than visual discovery. In contrast, one participant initially dismissed the tactile pleated elements entirely, thinking the “look and feel of the fabric was more for design instead of guidance” (P01, IC).
+
+Even with augmented cues, this conflict between the design and mental models persisted. One user in the Light Cues condition revealed the sheer strength of the ingrained mental model: "even with the [projected] arrows, my first thought was still to swipe them outwards because it's just normal to swipe something outwards" (P28, LC). 
+% This clearly demonstrates that the users' ingrained mental models from other devices were often powerful enough to override even explicit visual guidance.
+
+
+\subsubsection{The Rotary Dial: A Standout Success in Playful and Intuitive Interaction}
+
+In stark contrast to the more problematic elements, the \textbf{rotary dial emerged as a standout success} and a favorite feature for many participants ($n=15$). Its \textbf{combination of a familiar yet engaging gesture, satisfying physical form, and well-matched metaphors} was consistently praised across all conditions.
+
+The circular, spinning gesture was frequently described as the "most fun part" (P10, LC) and the interaction that participants "enjoyed the most” (P01, IC). This enjoyment was often linked to nostalgia and prior positive experiences, with two users drawing a direct comparison to the iconic iPod click wheel. As P26 (TC) explained, “I also really like the rotating, I think that's always one of my favorite input options, the iPod used to have that [...] and I think it's cool that you bring that back.”
+
+This positive sentiment was particularly strong when the dial was used to control the "spinning vinyl" metaphor in the music player ($n=10$). Participants found this interaction to be "fun" (P18, IC), "really, really good" (P15, IC), "most intuitive" (P22, TC) and a "funny feature" (P21, LC). One user enjoyed that it encourages to "play a bit of DJ in your car" (P24, IC), while another appreciated that the metaphor was "very novel but also interesting" and appropriate for the \gls{AV} context "because you have nothing to do anyway" (P22, TC). The light cue that projected a spinning disc onto the textile surface was highlighted as a key reason for this success, making the underlying metaphor clear. As P21 (LC) noted, “I thought the record was cool, it was also displayed like that [on the textile], so it was easy to understand and that was actually quite nice.” The dial was also successful in the contacts list, where the "phone wheel gimmick" (P23, TC) was immediately understood through its relation to an "old vintage phone" (P25, IC).
+
+The physical, shape-shifting nature of the dial itself was also highlighted as a positive feature. Participants noted that the recessed groove "gave great guidance to the finger" (P06, LC) and that they "liked that the [dial] changed shape" (P17, TC), reinforcing its interactive state.
+
+\subsubsection{Mixed Perceptions of the Tactile Surface}
+The physical and haptic qualities of the textile surface itself elicited a range of mixed reactions from participants. While many found the material to be a pleasant alternative to conventional interfaces, specific textures created notable friction.
+
+On the positive side, several participants described the surface as having a "\textbf{nice feeling}" (P12, TC) and found it "quite \textbf{pleasant}, a bit different from the typical glass and touch surfaces" (P13, LC). One user highlighted a key potential benefit of the medium, noting that the "different textural areas" could allow a user to "see it" without having to look down, aiding in eyes-free interaction (P28, LC).
+
+However, a recurring point of criticism was the \textbf{high friction of the pleated directional swipe areas}. Some participants described the "ripples" or "waves" as "a bit annoying" (P22, TC), stating that they had "very high resistance" which "slowed down the interaction a bit" (P22, TC). This was particularly noticeable when swiping against the direction of the pleats, an action that "didn’t feel very pleasant” (P15, IC), which lead another user change the swiping direction accordingly (P24, IC), indicating that the texture created a strong, perhaps unintended, directional bias. While some of these critiques were specific to certain textures, a few participants had a more generally negative reaction, with one finding the surface overall to be "unpleasant" (P11, IC).
+
+\subsubsection{Strong Confidence in the Potential for Eyes-Free Interaction}
+A strong consensus emerged regarding the prototype's potential for eyes-free use. A vast majority of participants ($n = 28$) expressed confidence that, with practice and familiarization, they would be able to operate the interface without looking down at their hands.
+
+This confidence was rooted in the rich tactile and haptic qualities of the interface. Participants frequently highlighted the various \textbf{physical cues that provided orientation}. One user explained that the "stitches actually helped me [...] understand where I am right now, so [...] it actually helps me to not look at it" (P25, IC). This was echoed by P22 (TC), who felt that because "everything is very tactile again, it feels different [...] you could operate it blindly". The dynamic, shape-shifting elements were also seen as a key enabler for non-visual use, with one participant stating, "especially with the things that move in and out you can get a great orientation” (P21, LC).
+
+Participants consistently described a \textbf{clear path from initial learning to future mastery}. The process was often compared to learning other physical devices, like "a remote of a tv or a controller of a console; you first have to look at it, but after you memorized the controls it’s easy to use” (P04, IC). Users acknowledged that a "short familiarization phase at the beginning" was necessary (P08, IC), but felt that "once you know the interface it’s very easy” (P03, TC) and that they could "use it blindly at some point after a few weeks” (P12, TC).
+
+However, participants also \textbf{identified areas for improvement to better support eyes-free interaction}. Several users felt the haptic feedback "could be stronger" (P19, TC) or that certain elements, such as the center button, could be "more prominent" (P07, LC) to be more easily felt.
+The overall size of the interface was also mentioned as a potential challenge for some ($n = 3$), with one participant noting, "maybe it's a bit too big to operate it completely blind [...] but in principle, the individual elements would make it work" (P18, IC).
+
+\subsubsection{The Perceived Potential of the Interface Paradigm}
+
+When asked to compare their experience to conventional in-vehicle touchscreens, an overwhelming majority of participants ($n = 27$) articulated clear and specific advantages of the textile-based \gls{HMI} paradigm. The positive feedback centered on three major themes: superior ergonomics, the potential for safer, eyes-free interaction, and a more engaging and hedonically rich user experience.
+
+A primary and frequently mentioned benefit was \textbf{ergonomics and physical comfort} ($n = 7$). Participants contrasted the relaxed posture of using the armrest with the physical strain required to operate a dashboard-mounted touchscreen. As one user explained, "instead of always bending to the screen, this [textile interface] would be very convenient” (P03, TC), while another noted that, "because I tend to sit further back, I always have to reach forward [...] and I think that's cool here, that it's just right there where my hand is anyway” (P26, TC). Another participant elaborated on this, explaining, "the advantage is that you don't have to move to get there, because you remain in your position, whereas with the touchscreen you have to lean forward, so you have to somehow invest energy in moving forward” (P28, LC). This sentiment was detailed by P30 (IC), who noted that “this feels a lot more natural to me than [having] to over extend myself to do something”. This advantage was also seen in comparison to in-air gesture systems. As P29 (LC) detailed: “I know some cars that have [...] in-air gestures [...] but it’s still using the arm in the air. [Here] I can comfortably rest [...] and use it without thinking too much. I prefer this one.”
+
+The potential for \textbf{reduced visual demand} and safer, eyes-free interaction was another dominant theme. Participants repeatedly criticized touchscreens for requiring constant visual attention. As P18 (IC) noted, "when I click on a touchscreen, I always have to look closely at it and then I would be more distracted".  The textile interface, with its rich tactile cues, was seen as a solution to this problem. Its tactile nature was directly linked to increased accuracy and a reduced need for precise hand-eye coordination. One participant found the controls to be "so big you can't miss them, so I think the accuracy is just higher" (P15, IC). Another user explained that this made the interaction feel more intentional and less prone to errors: “a touchscreen might [...] do things you don’t want to, like if you touch it mistakenly. But here in this case you had to intentionally do something and then it will happen” (P27, TC). The overall benefit was summarized by P20 (LC), who felt the haptic feedback "makes it much more practical [...] than on a touchscreen where you don't get any haptic feedback or have to look to see which area you have to click on". This was perceived as a significant advantage, allowing a user to "adjust the volume of a song while looking out the window” (P07, LC) or to "focus on the road while using my hand and just feel where I can go” (P09, LC). his was directly linked to a potential reduction in motion sickness. As P16 (LC) explained, "I find that a touchscreen [...] makes me sick relatively quickly when I'm driving, and I think that could be a bit less here because you can just interact with it and still look ahead." This potential for eyes-free use was also perceived as a positive contributor to safety and trust, even in an autonomous context. As P21 (LC) insightfully explained, "I think self-driving cars are a bit creepy sometimes [...], I'd rather check them during the process until I've gained trust, so [an interface] where I can still look at the road and focus on makes a lot of sense.”
+
+Finally, participants described the overall \textbf{user experience} as\textbf{ more engaging and pleasant}. Many found the textile interface "more exciting than a touch display” (P14, IC). P21 (LC) articulated a preference for the playful nature of the prototype: “I think that most people are used to [touchscreens] [...] but I find this more fun, I simply enjoy this more.” This was often linked to the haptic qualities, with one participant stating, "I like having something haptic that is somehow more pleasant" (P22, TC). Other practical benefits were also mentioned, such as the avoidance of fingerprints, with one user noting, "I always find it really annoying when there are so many fingerprints on the touchscreen, and I see less of that here” (P26, TC). The large, flat area of the interface itself in the inactive state was also seen as having unique potential for \gls{NDRA}s in an autonomous context, with one participant noting, "from the point of view of fully autonomous driving [...] you can also use it as a mouse pad" (P23, TC). Another participant projected this potential even further, suggesting that the non-fixed nature of a textile interface would be a key advantage in future reconfigurable interiors: "the advantage for autonomous cars is that the textile interface could move with the seat, since pointing in the driving direction might not be necessary anymore" (P07, LC). The most damning critique of the status quo came from P30 (IC), who concluded, “I’m actually not a big fan of touchscreens, I think that we just got [them] because everybody thinks that having a big screen means that there is something to touch, but it’s the worst thing to do in a moving car, whether you are driving it or not driving it.” 
+
+Despite the largely positive reception, participants also raised several important \textbf{concerns and potential drawbacks} of the textile paradigm, primarily centered on the steep learning curve compared to the ubiquity of touchscreens.
+
+A recurring theme was that the very novelty of the textile interface, while exciting, also presented a significant hurdle. Participants acknowledged that "we are more used to touchscreens" (P06, IC) and that with a touchscreen, "you can perhaps transfer more from the cell phone or similar [...], and here you have to learn a bit yourself" (P22, TC). This sentiment was echoed by P26 (TC), who noted that for people accustomed to touch interfaces, the textile system "is another step further" that requires a new learning effort.
+
+This led some participants to question the paradigm's efficiency for certain tasks. One user speculated that "for more complex tasks a touchscreen or wheel buttons might be more suitable" (P24, IC), while another felt that with a touchscreen, "you simply have more options [...] more buttons that you could tap at the same time" (P23, TC). The perceived precision of direct touch was also mentioned as a potential advantage for screens, with P06 (LC) suggesting that a "touch interface probably can be more precise".
+
+This contrast led to a nuanced discussion about the \textbf{trade-offs between the two paradigms}. One participant framed it as a choice between familiarity and comfort: "I think it’s more comfortable to actually touch what you see [...] but this [textile interface] works too, it’s just different” (P04, IC). Another user offered a compelling summary of the core conflict: "[With a touchscreen,] you just have the advantage that you're used to the whole thing from your cell phone, so you're working with a familiar mental model, but you also have the aspect that you're working a bit against safety. So everything you bring in tends to create more distractions. I find this much more minimalist and cleaner" (P23, TC). This suggests that while participants valued the potential safety and aesthetic benefits of the textile interface, they were acutely aware that it requires users to overcome the powerful, ingrained habits of touchscreen use.
+
+ 
