@@ -18,13 +18,26 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
     font-family: inherit;
 }
 
+/* Banner & Caption */
+.banner-figure {
+    margin: 0 0 2rem 0;
+}
+
 .banner-image {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.banner-caption {
+    font-style: italic;
+    color: #666;
+    color: var(--global-text-color-light, #666);
+    font-size: 0.9em;
+    margin-top: 8px;
+    text-align: center;
 }
 
 .download-section {
@@ -35,20 +48,45 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
 .download-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #0056b3; /* Fallback color */
-    background-color: var(--primary-color, #0056b3);
-    color: white;
+    background-color: #0056b3; /* Fallback */
+    background-color: var(--global-link-color, #0056b3);
+    color: #fff;
+    color: var(--global-bg-color, #fff); /* Invert for contrast usually */
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    border: none;
 }
 
 .download-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     text-decoration: none;
-    color: white;
+    color: #fff;
+    color: var(--global-bg-color, #fff);
+    background-color: var(--global-link-color-hover, #004494);
+}
+
+/* Retro Terminal Theme Overrides */
+html[data-theme="retro-terminal"] .download-btn {
+    border-radius: 0;
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid var(--global-link-color);
+    background-color: var(--global-link-color);
+    color: var(--global-bg-color);
+}
+
+html[data-theme="retro-terminal"] .download-btn:hover {
+    background-color: var(--global-link-color-hover);
+    color: var(--global-bg-color);
+}
+
+html[data-theme="retro-terminal"] .banner-image,
+html[data-theme="retro-terminal"] .card {
+    border-radius: 0;
+    border: 1px solid var(--global-border-color);
+    box-shadow: none;
 }
 
 /* Card System */
@@ -61,16 +99,28 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
 
 .card {
     background: #fff;
-    background: var(--card-bg, #fff); /* Assuming theme variable or fallback */
+    background: var(--background-color, #fff); /* Fallback */
     border: 1px solid #eee;
-    border-color: var(--border-color, #eee);
+    border-color: var(--global-border-color, #eee);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     display: none; /* Hidden by default */
     animation: fadeIn 0.5s ease;
     color: #333;
-    color: var(--text-color, #333);
+    color: var(--global-text-color, #333);
+}
+
+/* Dark Mode Support (if using generic data-theme="dark" or media query) */
+@media (prefers-color-scheme: dark) {
+    .card {
+        background: #2a2a2a;
+        color: #ddd;
+    }
+}
+html[data-theme="dark"] .card {
+    background: #1a1a1a; /* Example dark bg */
+    background: var(--global-bg-color, #1a1a1a); 
 }
 
 .card.active {
@@ -93,13 +143,14 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
 .nav-btn {
     background: none;
     border: 2px solid #ddd;
-    border-color: var(--border-color, #ddd);
+    border-color: var(--global-border-color, #ddd);
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s;
     color: inherit;
+    color: var(--global-text-color, inherit);
 }
 
 .nav-btn:hover:not(:disabled) {
@@ -122,13 +173,14 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
     height: 10px;
     border-radius: 50%;
     background-color: #ddd;
+    background-color: var(--global-border-color, #ddd);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .dot.active {
     background-color: #0056b3;
-    background-color: var(--primary-color, #0056b3);
+    background-color: var(--global-link-color, #0056b3);
 }
 
 /* Lightbox for zooming */
@@ -175,9 +227,16 @@ citation: 'Decaro, G., Bogarin Heurich, S., Appel, P. B., Kul, S., & Riener, A. 
 
 </style>
 
+<p style="margin-bottom: 2rem;"><strong>Authors:</strong> Gianluca Decaro, Sofia Bogarin Heurich, Patricia B. Appel, Sergen Kul, Andreas Riener</p>
+
 <div class="pub-container">
 
-<img src="/published_paper/muc25-51-fig1.jpg" alt="Teaser Figure: Overflight Scenarios" class="banner-image">
+<figure class="banner-figure">
+    <img src="/published_paper/muc25-51-fig1.jpg" alt="Teaser Figure: Overflight Scenarios" class="banner-image">
+    <figcaption class="banner-caption">
+        Overflight at (a) 1000 ft, (b) 1500 ft, and (c) 2000 ft from the participant's virtual reality (VR) point of view. Note: This image is a low-fidelity reconstruction to illustrate the experimental conditions, and the eVTOL is enlarged for clarity.
+    </figcaption>
+</figure>
 
 <div class="download-section">
     <a href="/published_paper/paper.pdf" class="download-btn" target="_blank">Download Full Paper (PDF)</a>
