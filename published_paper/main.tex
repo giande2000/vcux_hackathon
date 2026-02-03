@@ -1,0 +1,432 @@
+%%
+%% This is file `sample-sigconf-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+%\documentclass[sigconf,authordraft]{acmart}
+\documentclass[sigconf]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\copyrightyear{2025}
+\acmYear{2025}
+\setcopyright{rightsretained}
+\acmConference[MuC '25]{Mensch und Computer 2025}{August 31-September 03, 2025}{Chemnitz, Germany}
+\acmBooktitle{Mensch und Computer 2025 (MuC '25), August 31-September 03, 2025, Chemnitz, Germany}
+\acmDOI{10.1145/3743049.3748548            }
+\acmISBN{979-8-4007-1582-2/            25/08}
+
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+\acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+\usepackage{soul}
+\usepackage{siunitx}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title[Overflights in Residential Areas]{Too Close for Comfort? The Impact of eVTOL-Overflights in Residential Areas on Non-Users' Acceptance}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Gianluca Decaro}
+\authornote{Both authors contributed equally to this research.}
+\affiliation{%
+ \institution{Technische Hochschule Ingolstadt}
+  \city{Ingolstadt}
+  \country{Germany}
+}
+\orcid{0009-0007-7137-464X}
+\email{gid4500@thi.de}
+
+\author{Sofia Bogarin Heurich}
+\authornotemark[1]
+\affiliation{%
+ \institution{Technische Hochschule Ingolstadt}
+  \city{Ingolstadt}
+  \country{Germany}
+}
+\orcid{0009-0005-6772-661X}
+\email{sob0829@thi.de}
+
+
+\author{Patricia B. Appel}
+\email{patricia.appel@thi.de}
+\affiliation{%
+  \department {Human-Computer Interaction Group}
+  \institution{Technische Hochschule Ingolstadt}
+  \city{Ingolstadt}
+  \state{Bavaria}
+  \country{Germany}
+}
+\affiliation{%
+  \institution{Johannes Kepler University Linz}
+  \city{Linz}
+  \country{Austria}
+}
+\orcid{0009-0000-1617-5647}
+
+\author{Sergen Kul}
+\affiliation{%
+ \institution{Technische Hochschule Ingolstadt}
+  \city{Ingolstadt}
+  \country{Germany}
+}
+\orcid{0009-0001-2139-135X}
+\email{sek8171@thi.de}
+
+
+\author{Andreas Riener}
+\affiliation{%
+ \department {Human-Computer Interaction Group}
+ \institution{Technische Hochschule Ingolstadt}
+  \city{Ingolstadt}
+  \country{Germany}
+}
+\orcid{0000-0002-9174-8895}
+\email{andreas.riener@thi.de}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Decaro and Bogarin Heurich et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+ Urban Air Mobility (UAM) has the potential to revolutionize commuting by allowing passengers to travel quickly and efficiently within and between cities and airports. However, this innovation also raises concerns for residents on the ground, who are expected to tolerate frequent eVTOL overflights above their homes - an issue that this paper seeks to address. To investigate acceptance of eVTOLs from the perspective of residents on the ground being overflown at \qty{1000}{ft}, \qty{1500}{ft}, and \qty{2000}{ft}, a virtual reality study was conducted.
+ Results showed significant differences in emotions, the feeling of being disturbed by the noise, the spatial proximity, and the presence of the eVTOL in lower altitudes. Additionally, privacy concerns were expressed. The findings help the scientific community and regulators in developing guidelines for operating eVTOLs in residential areas in an acceptable manner for non-passengers.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+    <concept_id>10003120.10003121.10003122.10003334</concept_id>
+       <concept_desc>Human-centered computing~User studies</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003121.10003124.10010866</concept_id>
+       <concept_desc>Human-centered computing~Virtual reality</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~User studies}
+\ccsdesc[300]{Human-centered computing~Virtual reality}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Urban air mobility, eVTOL overflights, virtual reality, user acceptance, perceived safety.}
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+\begin{teaserfigure}
+    \centering
+    %\includegraphics[width=1\linewidth]{fig/Overflight Scenarios - High Res - Magnified.png}
+    %\includegraphics[width=\textwidth]{fig/Overflight Scenarios - High Res - Magnified with Line.png}
+    \includegraphics[width=\textwidth]{fig/overflight.png}
+    %\includegraphics[width=1\linewidth]{fig/Overflight Scenarios - High Res - Magnified on Spot.png}
+    \caption{Overflight at (a) 1000 ft, (b) 1500 ft, and (c) 2000 ft from the participant's virtual reality (VR) point of view. Note: This image is a low-fidelity reconstruction to illustrate the experimental conditions, and the eVTOL is enlarged for clarity.}
+    \Description{The figure consists of three images from the same participants' point of view (lying on the sun lounger looking into the sunny and partly cloudy sky with the tip of the parasol on the right in each picture). On the left (a) there is one eVTOL overflying the house and garden at 1000 ft, in the middle (b) at 1500 ft, and on the right (c) at 2000 ft altitude. Around each eVTOL is a white circle to show the reader where the eVTOL exactly is, as it appears very small in the pictures. There is also a magnifying glass in each figure to show the eVTOL to the reader.}
+    \label{fig:overflight_scenarios}
+\end{teaserfigure}
+
+% \received{20 February 2007}
+% \received[revised]{12 March 2009}
+% \received[accepted]{5 June 2009}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Introduction}
+Electric Vertical Take-Off and Landing vehicles (eVTOLs) are being developed to fly passengers on predefined routes at low altitudes, and they might overfly (non-) residential areas. However, eVTOL flights might raise concerns for residents on the ground, who are exposed to the technology and are expected to tolerate frequent overflights above their homes.
+One of the most prominent concerns of non-users is \textbf{noise emission} \cite{Ferreira2020, Mostofi2024}. 
+Although eVTOL manufacturers such as Airbus claim comparably low sound levels between 65–70~dB(A)~\cite{Airbus.2021}, residents may still perceive this as disruptive at home.
+\textbf{Visual pollution} is another frequently reported concern among non-users \cite{Mostofi2024, Stolz2022}. Mentioned concerns are low-flying eVTOLs and non-passenger drones \cite{Hogreve2021, Stolz2022} that can obstruct views of the sky~\cite{EASA2021-Report, Mostofi2024} and overpresence of eVTOLs in daily life \cite{Hogreve2021, Stolz2022}, which could disrupt the visual harmony of residential areas.
+Stolz and Laudien \cite{Stolz2022} found that flight altitude significantly influences whether individuals feel comfortable or anxious, as well as how predictable eVTOL movements appear.
+\textbf{Privacy concerns} are another critical factor for non-users \cite{Haddad2020, Stolz2022}. eVTOLs flying over private property can evoke concerns \cite{Hogreve2021}, potentially stemming from fears of surveillance or intrusion into privacy.
+Finally, \textbf{perceived safety} is another key determinant of public acceptance. While most studies have investigated safety concerns from the perspective of potential eVTOL users \cite{EASA2021-Report, Ferreira2020, Haddad2020, Hogreve2021, Kellermann2020, Stolz2022}, common fears include mid-air collisions \cite{Ferreira2020, Kellermann2020}, technical malfunctions \cite{Hogreve2021, Kellermann2020}, and cyberattacks \cite{Ferreira2020}. However, these concerns could also be relevant to non-users, as the mere presence of drones overhead could trigger feelings of vulnerability and a perceived lack of control.
+Taken together, these factors contribute to a broader concern among non-users that eVTOLs may impair their overall quality of life in residential environments, as already suggested by Hogreve and Janotta~\cite{Hogreve2021}.
+
+
+Although the regulatory and technological landscape for eVTOLs continues to evolve, research on public acceptance, especially from the non-user perspective, remains limited. This study addresses that gap by simulating overflights in a highly immersive VR environment and assessing emotional, perceptual, and behavioral reactions. The following research question was defined: \textbf{What is the impact of flying altitude and noise on the public acceptance of eVTOLs by non-passengers?}
+
+
+\section{Method}
+
+
+\subsection{Scenario and VR simulation}
+To investigate public acceptance of eVTOL overflights by non-users, a VR simulation was created. Participants were lying in VR on a sun lounger next to a parasol on a private backyard terrace. 
+The terrace was part of a realistic, calm suburban environment featuring a single-story house, garden, pool, and surrounding neighborhood with small houses and trees. From this position, participants experienced overflights of an eVTOL at three different altitudes:
+\qty{1000}{ft}, as this is a typical altitude for eVTOLs \cite{EASA.2024}; \qty{2000}{ft}, as eVTOLs can fly higher depending on route \cite{EASA.2024} and manufacturer specifications, as well as this was used as a max. altitude in an urban case study \cite{Kim.2022}; and \qty{1500}{ft} as an altitude in between both boundaries for measuring slight changes in acceptance.
+An initial baseline scenario without eVTOL presence allowed participants to acclimate to the VR setting.
+
+The VR environment was developed in Unity (version 2022.3.24f1) using the Universal Render Pipeline to ensure high visual fidelity. A pre-built suburban asset \cite{blue_dot_studios_2022} was customized to enhance immersion with environmental sounds such as wind, birdsong, distant traffic, and water movements of the pool. The animated eVTOL model overflew the garden at 100 km/h. This is the cruise speed of a multicopter model by Volocopter \cite{Volocopter.2025}. The eVTOL’s rotors were animated, and the flight noise (previously designed in another research project) was spatialized using 3D sound settings. The noise of 65 dB(A) was connected to the eVTOL, with a logarithmic sound setting used to simulate the eVTOL noise volume on the ground. To calibrate the audio, a sound level meter was held at ear distance from the VR headset (HTC Vive Focus 3) speaker. 
+
+
+\subsection{Participants}
+A total of 24 German-speaking participants were recruited for the user study, including eight men and fifteen women ($n = 1$ missing). Participants had an age range of 19 to 84~years ($M = 24.83$ years, $SD = 13.11$, $n = 1$ missing).
+
+
+\subsection{Measures}
+Standardized and adapted questionnaires were used before, during, and after the study. 
+Before the study, demographic data, knowledge of eVTOLs (Likert scale from 1 = ``very good'' to 6 = ``very poor'' and acceptance of eVTOLs were assessed using four items by Kalakou et al. \cite{Kalakou2023}, covering perceptions of eVTOLs' impact on access to transport, quality of life, and safety compared to airplanes. 
+Perceived safety of eVTOLs was measured using seven items by Keller et al. \cite{Keller2018}, which focused on perceived risks to the public, societal benefits, safety concerning human life and property, as well as potential usefulness and threats for oneself and one's family. 
+With the Positive and Negative Affect Schedule (PANAS) by Watson et al. \cite{Watson1988}, the emotional response (5-point Likert scale ranging from ``Not at all'' to ``Extremely'') was investigated.
+After each scenario, participants assessed their emotions based on the PANAS, and their experience using seven items adapted from Stolz et al. \cite{Stolz2022}, assessing whether they felt comfortable, disturbed, observed, restricted in their privacy, safe, whether the scenario felt unpredictable, and whether the noise of the eVTOL was disturbing. To this, we added three custom items, focusing on how each scenario was perceived and investigating attitudes toward eVTOLs regarding their spatial proximity, presence, and altitude. After the study, the participants assessed their acceptance and perceived safety with the same items as before the study. Acceptance, perceived safety of eVTOLs, and the scenario-based items were measured using 5-point Likert scales (1 = ``strongly disagree'' to ``5 = strongly agree''). Then, a semi-structured interview with self-defined items was conducted to investigate the reasons behind the acceptance, emotions, and perceptions.
+More items (regarding motion sickness, usability, and flight anxiety) were used, however they are not discussed further due to the scope of the paper.
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[width=0.33\textwidth]{fig/noise.png}
+    \includegraphics[width=0.33\textwidth]{fig/spatial-proximity.png}
+    \includegraphics[width=0.33\textwidth]{fig/presence.png}
+    \caption{Mean ratings for (a) ``The noise of the passenger drone disturbed me'', (b) ``The spatial proximity of the passenger drone bothered me'', and (c) ``The presence of the passenger drone disturbed me''.}
+    \Description{This figure is a composite image containing three line graphs, labeled (a), (b), and (c). Each graph plots a mean score on the y-axis, which ranges from 1 to 5, against three flight altitude conditions on the x-axis: "High," "Medium," and "Low." The mean scores for each condition are shown as black dots connected by solid lines, with vertical error bars indicating variability.
+    Graph (a) shows the mean ratings for the statement, "The noise of the passenger drone disturbed me." The mean score is approximately 2.3 at the High altitude and remains at a similar level for the Medium altitude. The line then rises sharply to a mean score of about 3.2 at the Low altitude.
+    Graph (b) shows the mean ratings for the statement, "The spatial proximity of the passenger drone bothered me." This graph displays a clear and steady upward trend. The mean score starts at approximately 1.7 for High altitude, increases to 2.1 for Medium altitude, and rises again to 2.4 for Low altitude.
+    Graph (c) shows the mean ratings for the statement, "The presence of the passenger drone disturbed me." The trend is similar to the other graphs. The mean score is about 2.1 for both High and Medium altitudes, and then increases to a mean score of approximately 2.6 at the Low altitude.
+    In summary, all three graphs illustrate a consistent trend: participants' ratings for disturbance from noise, spatial proximity, and presence increase as the eVTOL's flight altitude decreases, with the Low altitude scenario consistently receiving the highest disturbance scores.}
+    \label{fig:noise-proximity-presence}
+\end{figure*}
+
+\subsection{Procedure}
+The study followed a within-subject design. Each participant experienced four VR scenarios (baseline without eVTOL, and eVTOL flights at \qty{1000}{ft}, \qty{1500}{ft}, \qty{2000}{ft}; \qty{90}{seconds} each scenario) with the order of eVTOL scenarios randomized using balanced Latin Square. After briefing and baseline questionnaires, participants sat on a beanbag to match the VR simulation's posture. 
+After each scenario, participants completed the PANAS questionnaire and scenario-specific items. Following the final scenario, there was a concluding questionnaire and a semi-structured interview.
+
+
+ 
+\section{Results}
+
+\subsection{Acceptance, Perceived Safety, and Emotions}
+Participants rated their knowledge of passenger drones as relatively low ($M = 4.58$, $SD=1.32$). 
+A Wilcoxon signed-rank test showed no significance before and after the VR experience for general acceptance of eVTOLS ($W = 53.00$, $z = -1.69$, $p = .094$) and perceived safety of eVTOLs ($W = 91.50$, $z = -0.83$, $p = .413$).
+
+A non-parametric Friedman test was performed on the PANAS scores to assess emotional responses across the four scenarios (baseline, and eVTOL flights at \qty{1000}{ft}, \qty{1500}{ft}, \qty{2000}{ft}). The analysis revealed significant differences in positive affect ($\chi^2(4) = 9.82$, $p = .043$) and negative affect ($\chi^2(4) = 35.82$, $p < .001$) between the scenarios. Holm corrected post-hoc analyses clarified the emotional impact of the overflights. Compared to the baseline scenario with no drone, the presence of an eVTOL at any flight altitude resulted in a significant increase in negative emotions ($p < .001$). In contrast, positive emotions showed a more specific change: they significantly dropped when the flight altitude decreased from high (\qty{2000}{ft}) to medium (\qty{1500}{ft}) ($p = .047$). Crucially, while the eVTOLs did increase negative feelings, participants' positive emotions remained consistently higher than their negative emotions across all scenarios.
+
+
+\subsection{Scenario-Specific Perceptions of Overflights}
+In contrast to the general measures above, items about the scenarios revealed significant effects depending of the flight altitude. 
+A non-parametric Friedman test showed a significant effect on how participants felt ($\chi^2(3) = 27.98$, $p < .001$). Post hoc comparisons using Conover’s test with Holm's correction showed that participants felt significantly less comfortable in the low-altitude (\qty{1000}{ft}) scenario compared to the medium (\qty{1500}{ft}), high (\qty{2000}{ft}), and no-drone baseline scenarios ($p < .001$). The baseline scenario with no eVTOL was rated as the most comfortable.
+Similarly, the feeling of being disturbed was significantly affected by the scenario ($\chi^2(3) = 21.58$, $p < .001$). The low-altitude scenario was perceived as significantly more disturbing than the high ($p = .039$) and medium-altitude ($p = .057$) scenarios.
+
+Upon investigating the source of the disturbance, it was found that the noise of the eVTOL was a key factor. A Friedman test revealed a significant effect for the statement ``The noise of the passenger drone disturbed me'' ($\chi^2(2) = 14.60$, $p < .001$). Post-hoc analysis (using Holm correction) confirmed that the noise at low altitude was significantly more disturbing than at medium ($p = .001$) and high altitudes ($p < .001$) (see Fig.~\ref{fig:noise-proximity-presence}a). The eVTOL's spatial proximity ($\chi^2(2) = 6.68$, $p = .035$) (see Fig.~\ref{fig:noise-proximity-presence}b) and its mere presence ($\chi^2(2) = 7.14$, $p = .028$) (see Fig.~\ref{fig:noise-proximity-presence}c) were also rated as significantly more disturbing at low altitude compared to high altitude ($p = .028$ and $p = .030$, respectively).
+
+The presence of an eVTOL also impacted broader perceptions. Participants felt significantly less safe in all eVTOL-present scenarios compared to the no-eVTOL baseline ($\chi^2(3) = 14.90$, $p = .002$), though differences between the various flight altitudes were not significant (see Fig.~\ref{fig:safety-predictability}a). However, the scenarios were not perceived as significantly less unpredictable when an eVTOL was present ($\chi^2(3)=7.05$, $p = .070$) (see Fig.~\ref{fig:safety-predictability}b).
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.495\linewidth]{fig/perceived-safety.png}
+    \includegraphics[width=0.495\linewidth]{fig/unpredictable.png}
+    \caption{Mean ratings for ``I felt safe in the scenario'' and (b) ``The scenarios seemed unpredictable to me''.}
+    \Description{The figure is a composite image showing two line graphs, labeled (a) and (b). Both graphs plot a mean score on a y-axis that ranges from 1 to 5. The x-axis on both graphs displays four distinct scenarios: "No Drone," "High," "Medium," and "Low." Mean scores for each scenario are represented by black dots connected by a line, with vertical error bars indicating variability.
+    Graph (a) shows the mean ratings for the statement, "I felt safe in the scenario." The perceived safety is highest in the "No Drone" scenario, with a mean score of approximately 4.6. The score then drops sharply in the "High" altitude scenario to about 3.9. For the "Medium" and "Low" altitude scenarios, the mean scores remain at a similar, lower level, both close to 4.0. The overall trend shows that the presence of any drone reduces the feeling of safety compared to the baseline, but the specific flight altitude of the drone does not cause much further difference.
+    Graph (b) shows the mean ratings for the statement, "The scenarios seemed unpredictable to me." The perceived unpredictability is lowest in the "No Drone" scenario, with a mean score of about 1.5. The score jumps significantly to its peak of approximately 2.2 in the "High" altitude scenario. The scores for "Medium" and "Low" are slightly lower than "High," at about 1.9 and 2.1, respectively, but remain considerably higher than the "No Drone" baseline. The trend shows that the presence of any drone increases the feeling of unpredictability.
+    In summary, the two graphs show contrasting effects: the presence of a drone decreases feelings of safety and increases feelings of unpredictability when compared to a baseline with no drone.}
+    \label{fig:safety-predictability}
+\end{figure}
+
+
+While feelings of being watched showed no significance, with $\chi^2(3)=7.26$, $p = .064$ (see Fig.~\ref{fig:watched-privacy}a), the related concept of privacy invasion did ($\chi^2(3) = 9.25$, $p = .026$). A Conover's post-hoc test with Holm correction showed that participants felt their privacy was significantly more restricted in the low-altitude scenario compared to the no-eVTOL baseline ($p = .022$) (see Fig.~\ref{fig:watched-privacy}b). However, the differences between the three eVTOL-present altitudes were not statistically significant. 
+
+Finally, when participants judged how ``appropriate'' the flight altitude was for the residential setting, their ratings were significantly influenced by the altitude presented ($\chi^2(2) = 19.76$, $p < .001$). A Conover's post-hoc test with Holm correction revealed that the \qty{1000}{ft} altitude was considered significantly less appropriate than both the \qty{1500}{ft} ($p = .014$) and \qty{2000}{ft} ($p < .001$) altitudes.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.495\linewidth]{fig/observed.png}
+    \includegraphics[width=0.495\linewidth]{fig/privacy.png}
+    \caption{Mean ratings for (a) ``I felt like I was being watched in the scenario'' and (b) ``I felt restricted in my privacy in the scenario''.}
+    \Description{This figure is a composite image containing two line graphs, labeled (a) and (b). Both graphs plot a mean score on a y-axis ranging from 1 to 5. The x-axis on both graphs displays four scenarios: "No Drone," "High," "Medium," and "Low." Mean scores are shown as black dots connected by a solid line, with vertical error bars indicating variability.
+    Graph (a) shows the mean ratings for the statement, "I felt like I was being watched in the scenario." The score is at its lowest point in the "No Drone" scenario, with a mean of approximately 1.8. The score increases to about 2.3 for the "High" altitude scenario. The scores for the "Medium" and "Low" altitude scenarios remain at a similarly elevated level, at approximately 2.2 and 2.4, respectively. This shows that the feeling of being watched increases with any eVTOL presence, but does not change substantially between the different eVTOL altitudes.
+    Graph (b) shows the mean ratings for the statement, "I felt restricted in my privacy in the scenario." This graph displays a more progressive upward trend. The score begins at its lowest point of about 1.6 in the "No Drone" scenario. It then increases to approximately 2.2 for both the "High" and "Medium" altitude scenarios. The score rises again to its peak of about 2.5 in the "Low" altitude scenario. This trend indicates that feelings of privacy restriction not only increase with an eVTOL's presence but are also further amplified as the eVTOL's altitude decreases.
+    In summary, both graphs show that privacy-related concerns increase when an eVTOL is present. However, the negative effect of a lower flight altitude is more pronounced for the general feeling of "privacy restriction" (graph b) than for the specific feeling of "being watched" (graph a).}
+    \label{fig:watched-privacy}
+\end{figure}
+
+
+\subsection{Semi-structured Interviews}
+
+After the participants saw all the simulations, qualitative feedback was gathered to supplement the quantitative data. Participants were asked to identify their preferred scenarios by number, without being told which number corresponded to which flight altitude. Under this blind condition, the majority of participants (\textit{n}~=~13) chose the scenario with the highest flight altitude (\qty{2000}{ft}) as the most comfortable. For noise perception, preferences were more evenly split between the high (\textit{n}~=~8) and medium (\textit{n}~=~7) altitudes, with no participants favoring the low altitude. In terms of safety, the majority (\textit{n}~=~16) felt equally safe across the different eVTOL scenarios.
+
+When asked about their general feelings during an overflight, participants reported a wide spectrum of reactions. These ranged from positive emotions like curiosity (\textit{n}~=~ 3) and fascination (\textit{n}~=~1) to negative emotions such as anxiety (\textit{n}~=~1) and feeling disturbed (\textit{n}~=~4). Several participants remained neutral (\textit{n}~=~6), likening the eVTOL to a familiar airplane (\textit{n}~=~4). Crucially, when asked if they would change their garden activities, the vast majority (\textit{n}~=~15) stated they would not. However, a few noted they might alter highly private activities (\textit{n}~=~5) (e.g., nude sunbathing) or would be concerned for the comfort of their guests (\textit{n}~=~1).
+
+\section{Discussion}
+
+This study investigated the perception of passenger drone (eVTOL) overflights from a non-user perspective using an immersive VR simulation. The primary findings reveal a significant dichotomy: while the brief, observational experience did not alter participants' general pre-existing attitudes towards the technology, their specific perceptions and comfort levels were highly sensitive to the eVTOL's flight altitude.
+
+\subsection{General Acceptance, Perceived Safety, and Emotions}
+Despite the strong scenario-specific effects, the study did not lead to significant changes in participants' overall acceptance or perceived safety of eVTOLs. This could be based on the low prior knowledge of eVTOLs and, therefore, low exposure to influencing opinions. Secondly, the study's focus on the non-user perspective from a private garden, with only normally functioning eVTOLs, may not have provided sufficient emotional impact to shift general opinions.
+
+The results for perceived safety support this. While all eVTOL scenarios were perceived as less safe than the no-eVTOL baseline, there were no significant differences between the altitudes. 
+This baseline concern could reflect common fears documented in prior work, such as technical malfunctions or mid-air collisions \cite{Ferreira2020, Hogreve2021, Kellermann2020}. Participants could also perceive the altitudes as equally less safe due to the residential area with only small houses and no tall obstacles.
+Future research on critical overflight events and emergencies is needed to explore the boundary conditions of this safety perception.
+
+
+The emotional responses varied across the scenarios. Negative affect significantly increased during all flight scenarios compared to baseline, suggesting that the presence of eVTOLs near private property may evoke emotional discomfort or unease, regardless of altitude. However, the positive affect remained overall higher than the negative, with only a significant decrease observed between the high and medium flight altitudes. While these findings suggest that flight altitude can influence emotional reactions, the limited sample size may constrain the generalizability of the results. 
+
+The qualitative data provides crucial context here. While one participant each expressed anxiety or fascination, more individuals felt disturbed or curious. Several participants' comparison of the eVTOL to a familiar airplane suggests that if eVTOL operations can become as ordinary as other air traffic, public disturbance may decrease, allowing more positive feelings. 
+The finding that the majority would not change their daily garden activities further supports that if managed correctly, the perceived negative impact on overall quality of life \cite{Hogreve2021} may be less severe than initially feared. However, as real-life overflights of eVTOLs are not yet possible in Europe, which limited the study opportunities, a VR simulation was the only method to measure the influence of overflights on non-users. Therefore, a real-life study could lead to different results than the laboratory VR simulation study.
+
+\subsection{The Critical Role of Flight Altitude}
+The most salient finding of this study is the consistent relationship between flight altitude and negative perception. 
+As the eVTOL flew lower, participants reported feeling significantly less comfortable, more disturbed, and rated the altitude as less appropriate, a finding that aligns with previous research identifying flight altitude's impact on comfort and anxiety \cite{Stolz2022}. 
+Our results suggest this is not an abstract annoyance but is driven by concrete sensory and psychological factors. 
+Specifically, disturbance at lower altitudes was driven by two key factors previously identified as concerns for non-users: first, the increased annoyance from eVTOL noise \cite{Ferreira2020, Mostofi2024}, and second, a greater sense of intrusion from its spatial proximity and mere presence \cite{Hogreve2021, Stolz2022}.
+This indicates that for the public on the ground, the acceptability of UAM is not a simple yes/no question but is dependent on operational parameters that directly impact their personal space.
+
+Interestingly, the study revealed a nuanced view of privacy. While feelings of 'being watched' showed no significant change with altitude, the broader concept of 'privacy invasion', which is a critical factor for non-user acceptance \cite{Haddad2020, Hogreve2021, Stolz2022}, showed a clearer tendency to increase with the eVTOL's presence, statistically significant between the lowest altitude and the baseline.
+This suggests that the perceived intrusion is not limited to fears of surveillance but encompasses a wider sense of personal space being violated, a feeling amplified by the eVTOL's physical closeness and noise. 
+
+\subsection{Limitations and Future Work}
+It needs to be mentioned that this study had a few limitations, as previously discussed. As there are to date no eVTOLs flying in Europe, a study in reality was not possible. The immersive VR simulation was used to investigate the general acceptance, perceptions, and emotions during an overflight of an eVTOL. We have to acknowledge that the VR simulation we have used was depicting an idealized, calm, suburban environment with only one overflight per scenario in three different, relatively low altitudes. The results might be different in various other (urban) environments, such as an apartment close to a busy street in a dense city, public parks that are used for relaxation, or apartments close to an airport, where the residents are used to frequent loud noises. Also, it could make a difference in the acceptance and perception of overflying eVTOLs in higher altitudes than \qty{2000}{ft}, as some eVTOLs are able to fly at more than \qty{10000}{ft}~\cite{Joby.2024}. Furthermore, as it was only a simulation, the individual might not react in reality the same way when an eVTOL is really overflying the person in low altitude. The participant might be more concerned about privacy in reality than in the simulation, or an individual might get scared due to unknown eVTOL noises. Moreover, the eVTOL's noise was idealized without changes to spatial effects. A more diverse acoustic complexity would have made the simulation even more immersive. Also, the study did not investigate whether it makes a difference in the acceptance if there is only the noise of the eVTOL or only the visual perception of the overflight. However, our study aimed to provide a simple, first approach to the topic of acceptance of eVTOL overflights. 
+
+Future work needs to investigate the influence of more diverse scenarios in different environments (e.g., public parks, office environments near vertiports, or vacation settings like beaches), with multiple overflights in low and higher altitudes per scenario, and more immersive acoustics of the eVTOL noise on general acceptance, perceptions, and emotions.
+
+
+
+\section{Conclusion}
+
+A VR study was conducted to investigate the influence of different altitudes of eVTOL overflights and their resulting noise on non-passengers' eVTOL acceptance. The findings indicate that while the eVTOL overflights elicited significantly more negative emotions than the no-eVTOL baseline, this experience did not lead to significant changes in acceptance or perceived safety as measured before and after the study. However, the feeling of being disturbed by noise, spatial proximity, and the presence of the eVTOL made a significant difference between the altitudes, where especially low-flying eVTOLs were rated as most disturbing. Participants furthermore had more privacy concerns in low altitudes compared to no eVTOLs, and felt that lower altitudes were less appropriate for overflights. These findings can be used to further develop guidelines for overflying residential areas at different altitudes.  
+As the study only investigated non-users' views from a private garden in a calm residential area, future work should investigate a wider range of contexts, e.g., public parks, office environments near vertiports, or vacation settings like beaches, to investigate the influence of eVTOL flights at different altitudes on other parts of the everyday life of non-passengers. 
+
+\begin{acks}
+A special thanks goes to Henrike B\"ock, who accompanied the process of the study from the initial idea to the final result. This work is supported under the ``Innovative Luftmobilit\"at'' program of the German Federal Ministry of Transport (BMV) under Grant No. 45ILM1002G (AMI-FlyingIn2Air) and the ``Holistische Air Mobility Initiative Bayern'' of the Bavarian Ministry of Economic Affairs, Regional Development and Energy under Grant No. HAMI21-003-F (AMI-AirShuttle). This study received ethical approval from the Gemeinsame Ethikkommission der Hochschulen Bayerns (GEHBa). %(GEHBa-202404-V-176)
+AI-based tools were used for language correction (spelling and grammar using ChatGPT, DeepL, and Grammarly). We applied the SDC approach for the sequence of authors.
+\end{acks}
+
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+
+%%
+%% If your work has an appendix, this is the place to put it.
+% \appendix
+
+% \section{VR Simulation}
+
+
+% \begin{figure}[htb]
+%     \centering
+%     \includegraphics[width=1\linewidth]{fig/Garden Overview-POV.png}
+%     \caption{(a) VR simulation setting on the terrace with marked participant position (b) Participant VR point of view in the simulation.}
+%     \Description{There are two figures. On the left (a), there is a private garden with a pool inside the wooden terrace in a residential area depicted. The pool is close to the one-floor house. Opposite the pool, there are two sun loungers, one in the sun and one in the shade underneath a parasol. The garden is next to a calm street. The surrounding area is a calm residential area with only a few small houses. On the right (b), the figure depicts the participant's point of view from the pool towards the house. The small house has a large front window. The sky is sunny with only a few clouds.}
+%     \label{fig:terrace}
+% \end{figure}
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-sigconf-authordraft.tex'.
