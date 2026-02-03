@@ -143,12 +143,13 @@ html[data-theme="retro-terminal"] {
    --global-code-text-color: #657b83;
    --global-fig-caption-color: #93a1a1;
 
-   --global-link-color: #268bd2;
-   --global-link-color-hover: #cb4b16;
-   --global-link-color-visited: #b58900;
+   /* Links now Green */
+   --global-link-color: #859900;
+   --global-link-color-hover: #4b5e28;
+   --global-link-color-visited: #5b6e00;
 
    --global-masthead-link-color: #586e75;
-   --global-masthead-link-color-hover: #b58900;
+   --global-masthead-link-color-hover: #859900;
 
    --global-text-color: #073642;
    --global-text-color-light: #657b83;
@@ -177,5 +178,11 @@ html[data-theme="retro-terminal"] {
    .sidebar,
    .page__content {
       border-radius: 0;
+   }
+
+   /* Specific hover adjustments for buttons */
+   .btn:hover {
+      background-color: #4b5e28 !important;
+      color: #fdf6e3 !important;
    }
 }
