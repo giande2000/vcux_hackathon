@@ -12,10 +12,7 @@ redirect_from:
 ## Interactive CV Podcast
 Listen to a summary of my journey from Systems Integrator to Creative Technologist.
 
-<audio controls style="width: 100%; margin-bottom: 30px;">
-  <source src="{{ base_path }}/assets/audio/From_Systems_Integrator_to_BMW_Creative_Technologist.m4a" type="audio/mp4">
-  Your browser does not support the audio element.
-</audio>
+{% include audio_player.html src="/assets/audio/podcast.m4a" %}
 
 > Driven by the vision of designing intuitive and future-oriented user experiences, I combine technical understanding with creative design competence. My mission is to create real added value through user-centric solutions and to sustainably improve digital interaction.
 
@@ -28,10 +25,10 @@ Listen to a summary of my journey from Systems Integrator to Creative Technologi
 ---
 
 ## Personal Data
-*   **Date/Place of Birth:** 02.04.2000 | Hameln
+*   **Date/Place of Birth:** 02.04.2000 / Hameln
 *   **Nationalities:** German, Italian
 *   **Marital Status:** Single
-*   **Contact:** [gianluca.decaro@gmx.de](mailto:gianluca.decaro@gmx.de) | +49 1514 1367630
+*   **Contact:** [gianluca.decaro@gmx.de](mailto:gianluca.decaro@gmx.de) / +49 1514 1367630
 
 ---
 

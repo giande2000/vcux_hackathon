@@ -1,0 +1,239 @@
+<div class="retro-audio-player">
+    <audio id="cv-audio-player" data-src="{{ include.src | relative_url }}">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="controls">
+        <button id="play-pause-btn" class="control-btn" aria-label="Play">
+            <span class="icon-play">▶</span>
+            <span class="icon-pause" style="display: none;">❚❚</span>
+        </button>
+
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <div class="time-display">
+            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Scoped Audio Player Styles */
+    .retro-audio-player {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        background-color: var(--global-code-background-color, #eee8d5);
+        border: 2px solid var(--global-text-color, #073642);
+        padding: 15px;
+        font-family: "Courier New", Courier, monospace;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+
+    .retro-audio-player .controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .retro-audio-player .control-btn {
+        background: var(--global-bg-color, #fdf6e3);
+        border: 2px solid var(--global-text-color, #073642);
+        color: var(--global-link-color, #859900);
+        width: 40px;
+        height: 40px;
+        border-radius: 0;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        transition: transform 0.1s, box-shadow 0.1s;
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .retro-audio-player .control-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        background-color: var(--global-link-color, #859900);
+        color: var(--global-bg-color, #fdf6e3);
+    }
+
+    .retro-audio-player .control-btn:active {
+        transform: translateY(0);
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .retro-audio-player .progress-container {
+        flex-grow: 1;
+        height: 12px;
+        background-color: var(--global-bg-color, #fdf6e3);
+        /* Track color */
+        border: 2px solid var(--global-text-color, #073642);
+        cursor: pointer;
+        position: relative;
+    }
+
+    .retro-audio-player .progress-bar {
+        height: 100%;
+        background-color: var(--global-link-color, #859900);
+        /* Progress color */
+        width: 0%;
+        transition: width 0.1s linear;
+    }
+
+    .retro-audio-player .time-display {
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: var(--global-text-color, #073642);
+        min-width: 80px;
+        text-align: right;
+    }
+
+    /* Dark mode overrides (if needed) */
+    [data-theme="dark"] .retro-audio-player {
+        background-color: #2a2a2a;
+        border-color: #555;
+        box-shadow: 4px 4px 0px #000;
+    }
+
+    [data-theme="dark"] .retro-audio-player .control-btn {
+        background-color: #333;
+        border-color: #555;
+        color: #aaa;
+    }
+
+    [data-theme="dark"] .retro-audio-player .control-btn:hover {
+        background-color: var(--primary-color, #268bd2);
+        color: white;
+        border-color: var(--primary-color, #268bd2);
+    }
+
+    [data-theme="dark"] .retro-audio-player .progress-container {
+        background-color: #333;
+        border-color: #555;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const player = document.getElementById('cv-audio-player');
+        const playBtn = document.getElementById('play-pause-btn');
+        const iconPlay = playBtn.querySelector('.icon-play');
+        const iconPause = playBtn.querySelector('.icon-pause');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.querySelector('.retro-audio-player .progress-container');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        console.log("Audio Player Initialized");
+
+        // Fetch audio as Blob to fix local server playback issues
+        const audioSrc = player.getAttribute('data-src');
+        if (audioSrc) {
+            // Show loading state
+            playBtn.disabled = true;
+            playBtn.style.opacity = "0.6";
+            playBtn.style.cursor = "wait";
+
+            fetch(audioSrc)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = URL.createObjectURL(blob);
+                    player.src = blobUrl;
+                    console.log("Audio loaded as Blob");
+                    // Enable player
+                    playBtn.disabled = false;
+                    playBtn.style.opacity = "1";
+                    playBtn.style.cursor = "pointer";
+                })
+                .catch(err => {
+                    console.error("Audio fetch failed, falling back to direct src:", err);
+                    player.src = audioSrc;
+                    playBtn.disabled = false;
+                    playBtn.style.opacity = "1";
+                    playBtn.style.cursor = "pointer";
+                });
+        }
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        playBtn.addEventListener('click', function () {
+            console.log("Play button clicked. Current state:", player.paused ? "paused" : "playing");
+            if (player.paused) {
+                const playPromise = player.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        console.log("Playback started successfully");
+                        iconPlay.style.display = 'none';
+                        iconPause.style.display = 'inline';
+                        playBtn.setAttribute('aria-label', 'Pause');
+                    })
+                        .catch(error => {
+                            console.error("Playback failed:", error);
+                        });
+                }
+            } else {
+                player.pause();
+                console.log("Playback paused by user");
+                iconPlay.style.display = 'inline';
+                iconPause.style.display = 'none';
+                playBtn.setAttribute('aria-label', 'Play');
+            }
+        });
+
+        player.addEventListener('timeupdate', function () {
+            const percent = (player.currentTime / player.duration) * 100;
+            progressBar.style.width = `${percent}%`;
+            currentTimeEl.textContent = formatTime(player.currentTime);
+        });
+
+        player.addEventListener('loadedmetadata', function () {
+            console.log("Metadata loaded. Duration:", player.duration);
+            durationEl.textContent = formatTime(player.duration);
+        });
+
+        player.addEventListener('error', function (e) {
+            console.error("Audio error:", player.error);
+        });
+
+        player.addEventListener('pause', function () {
+            console.log("Audio paused event fired");
+            // Sync UI if paused externally or by system
+            if (player.paused) {
+                iconPlay.style.display = 'inline';
+                iconPause.style.display = 'none';
+            }
+        });
+
+        // Also try to set duration if metadata is already loaded
+        if (player.readyState >= 1) {
+            durationEl.textContent = formatTime(player.duration);
+        }
+
+        progressContainer.addEventListener('click', function (e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = player.duration;
+            player.currentTime = (clickX / width) * duration;
+        });
+
+        // Reset on end
+        player.addEventListener('ended', function () {
+            console.log("Playback ended");
+            iconPlay.style.display = 'inline';
+            iconPause.style.display = 'none';
+            playBtn.setAttribute('aria-label', 'Play');
+            progressBar.style.width = '0%';
+        });
+    });
+</script>
