@@ -1,0 +1,100 @@
+<div class="theme-toggle">
+    <button id="theme-toggle-btn" class="btn btn--clear" aria-label="Toggle Theme">
+        <i class="fas fa-adjust" aria-hidden="true"></i>
+        <span class="sr-only">Toggle Theme</span>
+    </button>
+    <ul id="theme-menu" class="theme-menu hidden" aria-hidden="true">
+        <li><button data-theme-value="light">Light</button></li>
+        <li><button data-theme-value="dark">Dark</button></li>
+        <li><button data-theme-value="frosted-glass">Frosted</button></li>
+    </ul>
+</div>
+
+<style>
+    .theme-toggle {
+        position: relative;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .theme-toggle .btn {
+        padding: 5px 10px;
+        font-size: 1.2em;
+        color: var(--global-masthead-link-color);
+    }
+
+    .theme-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--global-bg-color);
+        border: 1px solid var(--global-border-color);
+        border-radius: 4px;
+        padding: 5px 0;
+        list-style: none;
+        z-index: 9999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        min-width: 100px;
+    }
+
+    .theme-menu.hidden {
+        display: none;
+    }
+
+    .theme-menu button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 5px 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--global-text-color);
+    }
+
+    .theme-menu button:hover {
+        background: var(--global-thead-color);
+    }
+</style>
+
+<script>
+    (function () {
+        const btn = document.getElementById('theme-toggle-btn');
+        const menu = document.getElementById('theme-menu');
+        const themeButtons = menu.querySelectorAll('button[data-theme-value]');
+
+        // Toggle menu
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            menu.setAttribute('aria-hidden', !isHidden);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function () {
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                menu.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        // Theme selection
+        themeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const theme = this.getAttribute('data-theme-value');
+                setTheme(theme);
+            });
+        });
+
+        function setTheme(theme) {
+            if (theme === 'default') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.removeItem('theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            }
+        }
+    })();
+</script>
