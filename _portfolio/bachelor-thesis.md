@@ -25,8 +25,7 @@ date: 2025-08-04
 
 .banner-image {
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -287,8 +286,10 @@ html[data-theme="dark"] .port-card {
         <h2>Gallery</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
             <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/Fabric%20Exploration.png" class="zoomable" style="width:100%; border-radius:4px;" alt="Fabric Exploration" onclick="openLightbox(this)">
-            <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/Rotary%20Dial%20small.png" class="zoomable" style="width:100%; border-radius:4px;" alt="Rotary Dial" onclick="openLightbox(this)">
             <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/ArrowDialLC.jpg" class="zoomable" style="width:100%; border-radius:4px;" alt="Arrow Dial" onclick="openLightbox(this)">
+            <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/Marble%20LC.png" class="zoomable" style="width:100%; border-radius:4px;" alt="Marble Material" onclick="openLightbox(this)">
+            <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/Music%20-%20THE%20SLOW%20RUSH.png" class="zoomable" style="width:100%; border-radius:4px;" alt="Music App Interface" onclick="openLightbox(this)">
+            <img src="/project/Gianluca_Decaro___Bachelor_Thesis/images/size-exploration.jpg" class="zoomable" style="width:100%; border-radius:4px;" alt="Size Exploration" onclick="openLightbox(this)">
         </div>
     </div>
 
